@@ -1,0 +1,33 @@
+.contacts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: wrap;
+  align-items: center;
+  background: #272727;
+  padding: 0 6rem;
+}
+
+.contact-item {
+  color: #fcb900;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.contact-items {
+  color: white;
+  padding: 0rem;
+  font-size: 15px;
+  line-height: 22px;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.icon {
+  color: white;
+}

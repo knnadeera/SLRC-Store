@@ -1,0 +1,35 @@
+.rap {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.part {
+  margin: 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  transition: 0.5s;
+  
+}
+
+.part:hover,
+
+
+.part h3 {
+  margin: 0 0 0.25rem 0;
+  color: #fcb900;
+}
+
+.description {
+  font-style: italic;
+}
+
+.price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #ff6900;;
+  font-size: 1.25rem;
+}

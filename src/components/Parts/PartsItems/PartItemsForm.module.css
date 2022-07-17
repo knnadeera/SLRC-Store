@@ -1,0 +1,25 @@
+.form {
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.form button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #fcb900;
+  border: none;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.form button:hover,
+.form button:active {
+  transform: scale(1.1);
+  transition: 0.5s;
+}

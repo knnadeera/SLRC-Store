@@ -1,0 +1,83 @@
+.input {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 40rem;
+  }
+  
+  .input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input input {
+    font: inherit;
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0.15rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input input:focus {
+    outline: none;
+    border-color: #4f005f;
+  }
+  
+  .actions {
+    text-align: right;
+  }
+  
+  .actions button {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #fcb900;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+  }
+  
+  .actions button:hover,
+  .actions button:active {
+    color: rgb(255, 255, 255);
+    transition: .5s;
+    transform: scale(1.1);
+  }
+  
+  .actions .button--alt:hover {
+    background-color: rgb(255, 101, 101);
+    color: black
+  }
+
+  .actions .button {
+    background-color: #fcb900;
+    color: black
+  }
+
+  .sgnbutton {
+    text-align: left;
+  }
+  
+  .sgnbutton {
+    font: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #fcb900;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+  }
+  
+  .sgnbutton:hover,
+  .sgnbutton:active {
+    color: rgb(255, 255, 255);
+    transition: .5s;
+    transform: scale(1.1);
+  }
+
+  .sgnbutton {
+    background-color: #fcb900;
+    color: black
+  }

@@ -1,0 +1,15 @@
+.input {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0.25rem .25rem;
+  border-radius: 20px;
+}
+
+.input input {
+  width: 2.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font: inherit;
+  padding-left: 0.5rem;
+}
