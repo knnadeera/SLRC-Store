@@ -27,7 +27,7 @@ const Contacts = (props) => {
           <a
             href="https://www.facebook.com/k.n.nadeera"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className={classes["contact-item"]}
           >
             Nisala Nadeera

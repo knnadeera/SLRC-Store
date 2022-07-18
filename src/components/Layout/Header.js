@@ -1,3 +1,4 @@
+import React from "react";
 import HeaderCartButton from "./HeaderCartButton";
 import SiteTitle from "./SiteTitle";
 import classes from './Header.module.css'

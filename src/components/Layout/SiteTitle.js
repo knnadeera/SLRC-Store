@@ -1,3 +1,4 @@
+import React from "react";
 import classes from "./SiteTitle.module.css";
 import { TbDrone } from "react-icons/tb";
 import slrclogo from "../../Assets/slrclogo.jpg";

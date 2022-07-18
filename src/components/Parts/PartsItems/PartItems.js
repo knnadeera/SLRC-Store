@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import Card from "../../UI/Card";
 import classes from "./PartItems.module.css";
 import PartItemsForm from "./PartItemsForm";

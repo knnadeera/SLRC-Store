@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import classes from "./AvailableParts.module.css";
 import PartItems from "./PartsItems/PartItems";
 
