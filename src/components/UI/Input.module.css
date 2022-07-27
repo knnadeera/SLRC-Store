@@ -13,3 +13,27 @@
   font: inherit;
   padding-left: 0.5rem;
 }
+
+@media (width: 320px) {
+  .input input{
+    max-width: 60%;
+    max-height: 75%;
+    padding-left: 0.35rem;    
+  }
+}
+
+@media (width: 375x) {
+  .input input{
+    max-width: 60%;
+    max-height: 75%;
+    padding-left: 0.35rem;    
+  }
+}
+
+@media (width: 425x) {
+  .input input{
+    max-width: 65%;
+    max-height: 80%;
+    padding-left: 0.35rem;    
+  }
+}

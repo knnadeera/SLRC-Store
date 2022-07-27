@@ -29,7 +29,8 @@ const PartItems = (props) => {
           <div className={classes.description}>{props.description}</div>
           <div className={classes.price}>{price}</div>
         </div>
-        <PartItemsForm onAddToCart={addToCartHandler} />
+        <div className={classes.border}>
+        <PartItemsForm onAddToCart={addToCartHandler} /></div>
       </Card>
     </div>
   );

@@ -10,14 +10,12 @@
   background-color: #fcb900;
   color: black;
   padding: 0 1rem;
-  display: flex;
   border-radius: 25px;
   font-weight: bold;
   height: 2.5rem;
   width: 4rem;
-  float: right;
-  display: block;
-  flex-flow: column center;
+  float: center;
+  display: grid;
   padding-left: 15px;
   padding-right: 15px;
   transition: 0.5s;
@@ -31,6 +29,8 @@
 .icon {
   width: 1.35rem;
   height: 1.35rem;
+  position: center;
+  padding-top: 2px;
 }
 
 .badge {
@@ -91,4 +91,3 @@
   transition: .5s;
   transform: scale(1.2);
 }
-

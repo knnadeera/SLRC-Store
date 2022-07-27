@@ -5,19 +5,18 @@
 
 .part {
   margin: 1rem;
-  padding-bottom: .5rem;
+  width: 10rem;
+  height: 17rem;
+  padding-bottom: 0.5rem;
   border-bottom: 1px solid #ccc;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   transition: 0.5s;
-  
 }
 
 .part:hover,
-
-
 .part h3 {
   margin: 0 0 0.25rem 0;
   color: #fcb900;
@@ -30,6 +29,108 @@
 .price {
   margin-top: 0.25rem;
   font-weight: bold;
-  color: #ff6900;;
+  color: #ff6900;
   font-size: 1.25rem;
+}
+
+@media (width: 320px) {
+  .part {
+    display: grid;
+    margin: 0%;
+    border-bottom: none;
+  }
+  .part img {
+    width: 50;
+    height: 50;
+    margin: 0%;
+  }
+  .part h3 {
+    font-size: 80%;
+    max-width: 70%;
+    max-height: 1px;
+    margin-top: -20%;
+  }
+  .description {
+    font-size: 70%;
+    max-width: 70%;
+    max-height: 1px;
+    margin-top: -20%;
+  }
+  .price {
+    font-size: 70%;
+    max-width: 70%;
+    max-height: 1px;
+    margin-top: -20%;
+  }
+  .border {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+@media (width: 375px) {
+  .part {
+    display: grid;
+    margin: 0%;
+    border-bottom: none;
+  }
+  .part img {
+    width: 55;
+    height: 55;
+    margin: 0%;
+  }
+  .part h3 {
+    font-size: 85%;
+    max-width: 75%;
+    max-height: 1px;
+    margin-top: -20%;
+  }
+  .description {
+    font-size: 75%;
+    max-width: 75%;
+    max-height: 1px;
+    margin-top: -20%;
+  }
+  .price {
+    font-size: 75%;
+    max-width: 75%;
+    max-height: 1px;
+    margin-top: -15%;
+  }
+  .border {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+@media (width: 425px) {
+  .part {
+    display: grid;
+    margin: 0%;
+    border-bottom: none;
+  }
+  .part img {
+    width: 55;
+    height: 55;
+    margin: 0%;
+  }
+  .part h3 {
+    font-size: 85%;
+    max-width: 75%;
+    max-height: 1px;
+    margin-top: -22%;
+  }
+  .description {
+    font-size: 80%;
+    max-width: 90%;
+    max-height: 1px;
+    margin-top: -22%;
+  }
+  .price {
+    font-size: 75%;
+    max-width: 75%;
+    max-height: 1px;
+    margin-top: -18%;
+  }
+  .border {
+    border-bottom: 1px solid #ccc;
+  }
 }

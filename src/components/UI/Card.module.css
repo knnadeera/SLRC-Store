@@ -7,3 +7,27 @@
   width: 14rem;
   padding-left: auto;
 }
+
+@media (width: 320px) {
+  .card {
+    width: 8.1rem;
+    height: 17rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media (width: 375px) {
+  .card {
+    width: 8.1rem;
+    height: 17rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media (width: 425px) {
+  .card {
+    width: 10rem;
+    height: 17rem;
+    padding-bottom: 0.5rem;
+  }
+}

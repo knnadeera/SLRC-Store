@@ -1,14 +1,14 @@
 .parts {
-  max-width: 60rem;
+  max-width: 70rem;
   width: 100%;
   margin: 2rem auto;
-  animation: meals-appear 1s ease-out forwards;
+  animation: parts-appear 1s ease-out forwards;
   display: flex;
   flex-direction: row;
 }
 
 .parts ul {
-  padding: 0;
+  padding: auto;
   margin: 0 0 1em;
   list-style: none outside;
   clear: both;
@@ -24,7 +24,7 @@
   flex-wrap: wrap;
 }
 
-@keyframes meals-appear {
+@keyframes parts-appear {
   from {
     opacity: 0;
     transform: translateY(3rem);
@@ -33,5 +33,26 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (width: 320px) {
+  .parts {
+    margin-left: -3%;
+    margin-top: -15%;
+  }
+}
+
+@media (width: 375px) {
+  .parts {
+    margin-left: 3%;
+    margin-top: -15%;
+  }
+}
+
+@media (width: 425px) {
+  .parts {
+    margin-left: 0%;
+    margin-top: -12%;
   }
 }

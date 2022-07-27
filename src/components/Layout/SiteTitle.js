@@ -9,7 +9,8 @@ const SiteTitle = (props) => {
       <h1 className={classes["site-title__h1"]}>
         <a
           href="https://slrcstore.com/"
-          rel="home"
+          target="_blank"
+          rel="noopener noreferrer"
           className={classes["site-title__a"]}
         >
           <img src={slrclogo} alt="logo" className={classes.slrclogo} />

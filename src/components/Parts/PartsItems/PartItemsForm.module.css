@@ -4,6 +4,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 0.5rem;
 
 }
 
@@ -22,4 +23,55 @@
 .form button:active {
   transform: scale(1.1);
   transition: 0.5s;
+}
+
+@media (width: 320px) {
+  .form {
+    display: flex;
+    margin: -50%;    
+    padding-top: 5px;
+  }
+  .form button {
+    font-size: 70%;
+    font: center;
+    font-weight: normal;
+  }
+  .form button:active {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+}
+
+@media (width: 375px) {
+  .form {
+    display: flex;
+    margin: -45%;    
+    padding-top: 5px;
+  }
+  .form button {
+    font-size: 70%;
+    font: center;
+    font-weight: normal;
+  }
+  .form button:active {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+}
+
+@media (width: 425px) {
+  .form {
+    display: flex;
+    margin: -40%;    
+    padding-top: 5px;
+  }
+  .form button {
+    font-size: 70%;
+    font: center;
+    font-weight: normal;
+  }
+  .form button:active {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
 }
