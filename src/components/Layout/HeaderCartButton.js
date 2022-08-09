@@ -39,9 +39,9 @@ const HeaderCartButton = (props) => {
   return (
     <div className={classes.header}>
       <button className={btnClasses} onClick={props.onShowCart}>
-        <span className={classes.badge}>{numberOfCartItems}</span>
+        <div className={classes.badge}>{numberOfCartItems}
         <AiOutlineShoppingCart className={classes.icon} />
-        <span className={classes.badge}>{totalPriceOfCartItems}</span>
+        <span className={classes.badge}>{totalPriceOfCartItems}</span></div>
       </button>
       <button className={classes["user-button"]} onClick={props.onShowUser}>
         <BiUserCircle className={classes.icon} />

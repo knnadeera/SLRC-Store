@@ -10,15 +10,6 @@
 .parts ul {
   padding: auto;
   margin: 0 0 1em;
-  list-style: none outside;
-  clear: both;
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1px;
-  margin-block-end: 1rem;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

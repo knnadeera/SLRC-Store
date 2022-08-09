@@ -32,14 +32,10 @@
   
   .actions button:hover,
   .actions button:active {
-    color: #fc5c00;
-    transition: .5s;
+    color: black;
+    transition: .2s;
     transform: scale(1.1);
-  }
-  
-  .actions .button--alt {
-    color: black
-  }
+  } 
 
   .actions .button {
     background-color: #fcb900;
