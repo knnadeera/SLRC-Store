@@ -41,3 +41,7 @@
     background-color: #fcb900;
     color: black
   }
+  .checkout{
+    display: flex;
+    flex-direction: column;
+  }

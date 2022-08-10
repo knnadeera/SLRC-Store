@@ -1,0 +1,89 @@
+.form {
+  margin: 1rem 0;
+  color: #fcb900;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.control {
+  margin: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.control label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.control input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 15rem;
+  max-width: 100%;
+}
+
+.action {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.action button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fcb900;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  
+}
+
+.action .checkout {
+  background-color: #fcb900;
+  color: black;
+}
+
+.action button:hover,
+.action button:active {
+  color: black;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+
+.invalid label {
+  color: #ca3e51;
+}
+
+.invalid input {
+  border-color: #aa0b20;
+  background-color: #ffeff1;
+}
+
+.invalid{
+  color: #aa0b20;
+}
+
+.names {
+  display: flex;
+  flex-direction: row;
+}
+
+.address input {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 .5rem 0;
+}
+
+.phn_control{
+  margin: .5rem;
+  display: flex;
+  flex-direction: row;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 15rem;
+  max-width: 100%;
+}

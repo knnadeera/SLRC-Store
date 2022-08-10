@@ -27,10 +27,17 @@
   transform: scale(1.2);
 }
 
-.icon {
+.cart_icon {
   width: 1.35rem;
   height: 1.35rem;
   position: center;
+  padding-top: 2px;
+}
+
+.user_icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  align-self: center;
   padding-top: 2px;
 }
 
@@ -92,4 +99,5 @@
   transition: 0.5s;
   transform: scale(1.2);
 }
+
 

@@ -15,6 +15,16 @@
   flex-wrap: wrap;
 }
 
+.loading {
+  text-align: center;
+  color: white;
+}
+
+.haserror {
+  text-align: center;
+  color: red;
+}
+
 @keyframes parts-appear {
   from {
     opacity: 0;

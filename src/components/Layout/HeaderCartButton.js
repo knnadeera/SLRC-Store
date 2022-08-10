@@ -40,11 +40,11 @@ const HeaderCartButton = (props) => {
     <div className={classes.header}>
       <button className={btnClasses} onClick={props.onShowCart}>
         <div className={classes.badge}>{numberOfCartItems}
-        <AiOutlineShoppingCart className={classes.icon} />
+        <AiOutlineShoppingCart className={classes.cart_icon} />
         <span className={classes.badge}>{totalPriceOfCartItems}</span></div>
       </button>
       <button className={classes["user-button"]} onClick={props.onShowUser}>
-        <BiUserCircle className={classes.icon} />
+        <BiUserCircle className={classes.user_icon} />
       </button>
     </div>
   );
