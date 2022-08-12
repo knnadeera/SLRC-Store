@@ -5,6 +5,7 @@ import Header from "./components/Layout/Header";
 import User from "./components/Layout/User/User";
 import Parts from "./components/Parts/parts";
 import CartProvider from "./Store/CartProvider";
+import classes from './App.module.css'
 
 const App = (props) => {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -28,13 +29,18 @@ const App = (props) => {
 
   return (
     <CartProvider>
-      {cartIsShown && <Cart onClose={cartCloseHandler} />}
-      {userFormShown && <User onClose={userFormCloseHandler} />}
-      <Contacts />
-      <Header onShowCart={cartShownHandler} onShowUser={userFormShowHandler} />
-      <main>
-        <Parts />
-      </main>
+      <div className={classes.app}>
+        {cartIsShown && <Cart onClose={cartCloseHandler} />}
+        {userFormShown && <User onClose={userFormCloseHandler} />}
+        <Contacts />
+        <Header
+          onShowCart={cartShownHandler}
+          onShowUser={userFormShowHandler}
+        />
+        <main>
+          <Parts />
+        </main>
+      </div>
     </CartProvider>
   );
 };

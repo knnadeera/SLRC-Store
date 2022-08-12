@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+.site-title p {
+  color: black;
+}
+
 .site-title__h1 {
   margin: 0;
   padding: 0;

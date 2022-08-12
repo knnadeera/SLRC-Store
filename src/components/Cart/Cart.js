@@ -67,21 +67,26 @@ const Cart = (props) => {
 
   const cartModalContent = (
     <Fragment>
-      {cartItems}
-      <div className={classes.total}>
-        <span>Total Amount:</span>
-        <span>{totalAmount}</span>
-      </div>
-      <div className={classes.actions}>
-        <button className={classes["button--alt"]} onClick={props.onClose}>
-          Close
-        </button>
-        {hasItems && (
-          <button className={classes.button} onClick={ProceedHandler}>
-            Proceed to checkout
-          </button>
-        )}
-      </div>
+      {!isProceed && cartItems}
+      {!isProceed && (
+        <Fragment>
+          {" "}
+          <div className={classes.total}>
+            <span>Total Amount:</span>
+            <span>{totalAmount}</span>
+          </div>
+          <div className={classes.actions}>
+            <button className={classes["button--alt"]} onClick={props.onClose}>
+              Close
+            </button>
+            {hasItems && (
+              <button className={classes.button} onClick={ProceedHandler}>
+                Proceed to checkout
+              </button>
+            )}
+          </div>
+        </Fragment>
+      )}
       {isProceed && (
         <Checkout
           onConfirm={submitOrderHandler}

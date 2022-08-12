@@ -24,13 +24,16 @@ const PartItems = (props) => {
     <div className={classes.rap}>
       <Card>
         <div className={classes.part}>
-          <img src={props.img} alt="product" width="100" height="100" />
+          <div className={classes.img}>
+            <img src={props.img} alt="product" width="100" height="100" />
+          </div>
           <h3>{props.name}</h3>
           <div className={classes.description}>{props.description}</div>
           <div className={classes.price}>{price}</div>
         </div>
         <div className={classes.border}>
-        <PartItemsForm onAddToCart={addToCartHandler} /></div>
+          <PartItemsForm onAddToCart={addToCartHandler} />
+        </div>
       </Card>
     </div>
   );

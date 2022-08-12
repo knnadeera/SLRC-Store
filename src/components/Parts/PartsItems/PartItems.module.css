@@ -1,10 +1,10 @@
 .rap {
-  margin: 5px;
+  margin: 10px 5px;
   cursor: pointer;
 }
 
 .part {
-  margin: 1rem;
+  margin: 1rem 1.5rem 1rem 1.5rem;
   width: 10rem;
   height: 17rem;
   padding-bottom: 0.5rem;
@@ -13,24 +13,33 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  transition: 0.5s;
+  margin-top: -1rem;
 }
 
-.part:hover,
+.img {
+  border: 1px solid rgba(167, 165, 165, 0);
+  border-radius: 5px;
+  box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
 .part h3 {
-  margin: 0 0 0.25rem 0;
   color: #fcb900;
+  text-align: center;
 }
 
 .description {
   font-style: italic;
+  text-align: center;
 }
 
 .price {
-  margin-top: 0.25rem;
   font-weight: bold;
   color: #ff6900;
   font-size: 1.25rem;
+  text-align: center;
 }
 
 @media (width: 320px) {
