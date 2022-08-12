@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "cb975c64be33c9ac3f79",
-    "url": "/SLRC-Store/static/css/main.6834ec0e.chunk.css"
+    "revision": "5528af14de4226236a5b",
+    "url": "/SLRC-Store/static/css/main.47e5efbb.chunk.css"
   },
   {
-    "revision": "cb975c64be33c9ac3f79",
-    "url": "/SLRC-Store/static/js/main.cb975c64.chunk.js"
+    "revision": "5528af14de4226236a5b",
+    "url": "/SLRC-Store/static/js/main.5528af14.chunk.js"
   },
   {
     "revision": "91b8728d32ba6434ecf7",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/SLRC-Store/static/js/runtime~main.f3fddd4c.js"
   },
   {
-    "revision": "ea8f06fdcd7798fdbd30f3c6fbebeb96",
+    "revision": "c6bd3e960bceb288fa0b1e64b27c486b",
     "url": "/SLRC-Store/index.html"
   }
 ];
