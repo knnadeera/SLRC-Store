@@ -2,7 +2,9 @@ import React, { Fragment } from "react";
 import classes from "./CartItem.module.css";
 
 const CartItem = (props) => {
-  const price = `$${props.price.toFixed(2)}`;
+
+  
+  const itemPrice = `$${props.price.toFixed(2)}`;
 
   return (
     <Fragment>
@@ -19,10 +21,10 @@ const CartItem = (props) => {
         </div>
         <div className={classes.total}>
           <span>
-            Price :<span className={classes.price}>{price}</span>
+            Price :<span className={classes.price}>{itemPrice}</span>
           </span>
           <span>
-            Amount :<span className={classes.amount}>x {props.amount}</span>
+            Amount :<span className={classes.amount}>x {props.qty}</span>
           </span>
         </div>
         <div className={classes.actions}>

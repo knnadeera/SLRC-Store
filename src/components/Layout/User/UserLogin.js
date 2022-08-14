@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./UserLogin.module.css";
 import Modal from "../../UI/Modal";
 import UserForm from "./UserSignUpForm";
+import { useDispatch, useSelector } from "react-redux";
+import { uiActions } from "../../../Store/ui-slice";
 
 const UserLogin = (props) => {
-  const [signUpForm, setSignUpForm] = useState(false);
+  const dispatch = useDispatch();
+
+  const showUserSignUp = useSelector((state) => state.ui.userSignUpIsVisible);
 
   const signUpHandler = () => {
-    setSignUpForm(true);
+    dispatch(uiActions.userSignUpToggle());
+  };
+
+  const closeSignUpHandler = () => {
+    dispatch(uiActions.userSignUpToggle());
   };
 
   return (
@@ -20,13 +28,12 @@ const UserLogin = (props) => {
       </form>
 
       <div className={classes.actions}>
-          {signUpForm && <UserForm onClose={props.onClose} />}
-          <button onClick={signUpHandler} className={classes.button}>
-            Sign Up
-          </button>
+        {showUserSignUp && <UserForm onClose={closeSignUpHandler} />}
+        <button onClick={signUpHandler} className={classes.button}>
+          Sign Up
+        </button>
         <button
           type="button"
-          className={classes["button--alt"]}
           onClick={props.onClose}
         >
           Close

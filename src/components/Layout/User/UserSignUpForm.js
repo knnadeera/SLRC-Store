@@ -282,7 +282,6 @@ const UserForm = (props) => {
       <div className={classes.actions}>
         <button
           type="button"
-          className={classes["button--alt"]}
           onClick={props.onClose}
         >
           Close

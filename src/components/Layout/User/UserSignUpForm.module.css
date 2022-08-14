@@ -1,69 +1,63 @@
 .input {
-    margin: 0rem 2rem;
-    padding: 1rem;
-    width: 90%;
-    max-width: 40rem;
-  }
-  
-  .input label {
-    display: block;
-    font-weight: bold;
-    margin-top: .5rem;
-    margin-bottom: 0.1rem;
-  }
-  
-  .input input {
-    font: inherit;
-    display: block;
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: 0.15rem;
-  }
-  
-  .input input:focus {
-    outline: none;
-    border-color: #4f005f;
-  }
-  
-  .actions {
-    text-align: right;
-  }
-  
-  .actions button {
-    font: inherit;
-    cursor: pointer;
-    background-color: transparent;
-    border: 1px solid #fcb900;
-    padding: 0.5rem 2rem;
-    border-radius: 25px;
-    margin-left: 1rem;
-  }
-  
-  .actions button:hover,
-  .actions button:active {
-    color: rgb(255, 255, 255);
-    transition: .5s;
-    transform: scale(1.1);
-  }
-  
-  .actions .button--alt:hover {
-    background-color: rgb(255, 101, 101);
-    color: black
-  }
+  margin: 0rem 2rem;
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
+}
 
-  .actions .button {
-    background-color: #fcb900;
-    color: black
-  }
+.input label {
+  display: block;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.1rem;
+}
 
-  .input select {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.1rem;
-  }
+.input input {
+  font: inherit;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 0.15rem;
+}
 
-  .input option {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.1rem;
-  }
+.input input:focus {
+  outline: none;
+  border-color: #4f005f;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fcb900;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+
+.actions button:hover,
+.actions button:active {
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.actions .button {
+  background-color: #fcb900;
+  color: black;
+}
+
+.input select {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.1rem;
+}
+
+.input option {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.1rem;
+}

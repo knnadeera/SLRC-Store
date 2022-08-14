@@ -1,35 +1,39 @@
-import React, { useContext } from "react";
+import React from "react";
 import Card from "../../UI/Card";
 import classes from "./PartItems.module.css";
 import PartItemsForm from "./PartItemsForm";
-import CartContext from "../../../Store/cart-context";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../Store/cart-slice";
 
 const PartItems = (props) => {
-  const cartCtx = useContext(CartContext);
-  const price = `$${props.price.toFixed(2)}`;
+  const itemPrice = `$${props.price.toFixed(2)}`;
 
-  const addToCartHandler = (amount) => {
-    cartCtx.addItem({
-      id: props.id,
-      name: props.name,
-      amount: amount,
-      price: props.price,
-      img: props.img,
-      des: props.description,
-      spec: props.specifications,
-    });
+  const dispatch = useDispatch();
+
+  const { id, img, name, description, price } = props;
+
+  const addToCartHandler = () => {
+    dispatch(
+      cartActions.addItemToCart({id, img, name, description, price})
+    );
   };
 
   return (
     <div className={classes.rap}>
       <Card>
         <div className={classes.part}>
-          <div className={classes.img}>
-            <img src={props.img} alt="product" width="100" height="100" />
+          <div className={classes.img_dev}>
+            <img
+              src={img}
+              alt="product"
+              width="100"
+              height="100"
+              className={classes.img}
+            />
           </div>
-          <h3>{props.name}</h3>
-          <div className={classes.description}>{props.description}</div>
-          <div className={classes.price}>{price}</div>
+          <h3>{name}</h3>
+          <div className={classes.description}>{description}</div>
+          <div className={classes.price}>{itemPrice}</div>
         </div>
         <div className={classes.border}>
           <PartItemsForm onAddToCart={addToCartHandler} />

@@ -36,24 +36,3 @@
     transform: translateY(0);
   }
 }
-
-@media (width: 320px) {
-  .parts {
-    margin-left: -3%;
-    margin-top: -15%;
-  }
-}
-
-@media (width: 375px) {
-  .parts {
-    margin-left: 3%;
-    margin-top: -15%;
-  }
-}
-
-@media (width: 425px) {
-  .parts {
-    margin-left: 0%;
-    margin-top: -12%;
-  }
-}

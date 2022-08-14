@@ -1,5 +1,5 @@
 .rap {
-  margin: 10px 5px;
+  margin: 1.5% 5px;
   cursor: pointer;
 }
 
@@ -13,16 +13,19 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: -1rem;
 }
 
 .img {
   border: 1px solid rgba(167, 165, 165, 0);
   border-radius: 5px;
   box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  margin-top: -1rem;
+}
+
+.img_dev {
   display: flex;
   justify-content: center;
-  background-color: white;
 }
 
 .part h3 {
@@ -48,11 +51,12 @@
     margin: 0%;
     border-bottom: none;
   }
-  .part img {
+  .img {
     width: 50;
     height: 50;
-    margin: 0%;
+    margin-left: -2.9rem;
   }
+
   .part h3 {
     font-size: 80%;
     max-width: 70%;
@@ -82,10 +86,10 @@
     margin: 0%;
     border-bottom: none;
   }
-  .part img {
+  .img {
     width: 55;
     height: 55;
-    margin: 0%;
+    margin-left: -2.8rem;
   }
   .part h3 {
     font-size: 85%;
@@ -116,10 +120,10 @@
     margin: 0%;
     border-bottom: none;
   }
-  .part img {
+  .img {
     width: 55;
     height: 55;
-    margin: 0%;
+    margin-left: -1rem;
   }
   .part h3 {
     font-size: 85%;

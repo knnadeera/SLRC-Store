@@ -4,6 +4,10 @@
   justify-content: space-around;
 }
 
+.header button{
+  margin: 0 .2rem 0 0;
+}
+
 .button {
   cursor: pointer;
   border: none;
@@ -74,25 +78,19 @@
     transform: scale(1);
   }
 }
+
 .user-button {
   cursor: pointer;
   border: none;
   background-color: #fcb900;
   color: black;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
   border-radius: 25px;
   font-weight: bold;
   height: 2.5rem;
-  width: 4rem;
-  float: right;
+  width: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); 
   display: block;
-  flex-flow: column flex-end;
-  padding-left: 15px;
-  padding-right: 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  text-align: center;
+  float: center;
 }
 
 .user-button:hover {
