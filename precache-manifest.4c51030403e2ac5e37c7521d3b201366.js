@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/SLRC-Store/static/js/runtime~main.f3fddd4c.js"
   },
   {
-    "revision": "7c3cab57ac8b52512736b936b2151265",
+    "revision": "2eae8e84239a6a30fd8cfef01c4dd923",
     "url": "/SLRC-Store/index.html"
   }
 ];
