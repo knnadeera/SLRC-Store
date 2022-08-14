@@ -13,9 +13,7 @@ const PartItems = (props) => {
   const { id, img, name, description, price } = props;
 
   const addToCartHandler = () => {
-    dispatch(
-      cartActions.addItemToCart({id, img, name, description, price})
-    );
+    dispatch(cartActions.addItemToCart({ id, img, name, description, price }));
   };
 
   return (

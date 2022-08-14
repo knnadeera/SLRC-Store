@@ -4,8 +4,6 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  overflow: auto;
-  max-height: 60rem;
 }
 
 .control {

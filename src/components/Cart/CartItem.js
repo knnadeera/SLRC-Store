@@ -1,14 +1,31 @@
 import React, { Fragment } from "react";
 import classes from "./CartItem.module.css";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../Store/cart-slice";
 
 const CartItem = (props) => {
+  const dispatch = useDispatch();
 
-  
+  const { id, price, name } = props;
+
+  const cartItemAddHandler = () => {
+    dispatch(cartActions.addItemToCart({ id, price, name }));
+    console.log(cartActions.addItemToCart);
+  };
+
+  const cartItemRemoveHandler = () => {
+    dispatch(cartActions.removeItemFromCart(id));
+  };
+
+  const removeCartItemHandler = () => {
+    dispatch(cartActions.removeAllItemFromCart(id));
+  };
+
   const itemPrice = `$${props.price.toFixed(2)}`;
 
   return (
     <Fragment>
-      <button className={classes.remove} onClick={props.onItemRemove}>
+      <button className={classes.remove} onClick={removeCartItemHandler}>
         x
       </button>
       <li className={classes["cart-item"]}>
@@ -28,8 +45,8 @@ const CartItem = (props) => {
           </span>
         </div>
         <div className={classes.actions}>
-          <button onClick={props.onRemove}>−</button>
-          <button onClick={props.onAdd}>+</button>
+          <button onClick={cartItemRemoveHandler}>−</button>
+          <button onClick={cartItemAddHandler}>+</button>
         </div>
       </li>
     </Fragment>

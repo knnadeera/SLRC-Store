@@ -12,25 +12,14 @@ const Cart = (props) => {
   const [didSubmit, setDidSubmit] = useState(false);
 
   const cartItems = useSelector((state) => state.cart.items);
+ 
   const dispatch = useDispatch();
 
   const totalPrice = useSelector((state) => state.cart.totalPrice);
 
   const cartTotalPrice = `$${totalPrice.toFixed(2)}`;
 
-  const hasItems = cartItems.length > 0;
-
-  const cartItemRemoveHandler = (id) => {
-    // cartCtx.remove(id);
-  };
-
-  const removeCartItemHandler = (id) => {
-    // cartCtx.itemRemove(id);
-  };
-
-  const cartItemAddHandler = (item) => {
-    // cartCtx.addItem({ ...item, amount: 1 });
-  };
+  const hasItems = cartItems.length > 0;  
 
   const ProceedHandler = () => {
     setIsProceed(true);
@@ -58,13 +47,11 @@ const Cart = (props) => {
       {cartItems.map((item) => (
         <CartItem
           key={item.id}
+          id={item.id}
           name={item.name}
           img={item.img}
           price={item.price}
-          qty={item.qty}
-          onAdd={cartItemAddHandler.bind(null, item)}
-          onRemove={cartItemRemoveHandler.bind(null, item.id)}
-          onItemRemove={removeCartItemHandler.bind(null, item.id)}
+          qty={item.qty}          
         />
       ))}
     </ul>
