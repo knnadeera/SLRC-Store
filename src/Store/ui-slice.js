@@ -6,6 +6,7 @@ const uiSlice = createSlice({
     cartIsVisible: false,
     userIsVisible: false,
     userSignUpIsVisible: false,
+    notification: null,
   },
   reducers: {
     cartToggle(state) {
@@ -23,6 +24,14 @@ const uiSlice = createSlice({
         state.userIsVisible = !state.userIsVisible;
         state.userSignUpIsVisible = !state.userSignUpIsVisible;
       }
+    },
+
+    showNotification(state, action) {
+      state.notification = {
+        status: action.payload.status,
+        title: action.payload.title,
+        message: action.payload.message,
+      };
     },
   },
 });

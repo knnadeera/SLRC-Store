@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Cart from "./components/Cart/Cart";
 import Contacts from "./components/Layout/Contacts";
 import Header from "./components/Layout/Header";
@@ -7,23 +7,33 @@ import Parts from "./components/Parts/parts";
 import classes from "./App.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "./Store/ui-slice";
+import Notification from "./components/UI/Notification";
+import { sendCartData } from "./Store/cart-action";
+
+let isInitial = true;
 
 const App = (props) => {
+  const [showNotification, isShowNotification] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
   const showCart = useSelector((state) => state.ui.cartIsVisible);
   const showUser = useSelector((state) => state.ui.userIsVisible);
+  const notification = useSelector((state) => state.ui.notification);
+
+  // useEffect(() => {
+  //   dispatch(fetchCartData());
+  // }, [dispatch]);
 
   useEffect(() => {
-    fetch(
-      "https://sl-rc-store-default-rtdb.asia-southeast1.firebasedatabase.app/cart.json",
-      {
-        method: "PUT",
-        body: JSON.stringify(cart),
-      }
-    );
-  }, [cart]);
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+
+    dispatch(sendCartData(cart));
+    isShowNotification(true);
+  }, [cart, dispatch]);
 
   const cartShownHandler = () => {
     dispatch(uiActions.cartToggle());
@@ -41,8 +51,20 @@ const App = (props) => {
     dispatch(uiActions.userToggle());
   };
 
+  const closeHandler = () => {
+    isShowNotification(false);
+  };
+
   return (
     <Fragment>
+      {showNotification && notification && (
+        <Notification
+          onClose={closeHandler}
+          status={notification.status}
+          title={notification.title}
+          message={notification.message}
+        />
+      )}
       <div className={classes.app}>
         {showCart && <Cart onClose={cartCloseHandler} />}
         {showUser && <User onClose={userFormCloseHandler} />}
