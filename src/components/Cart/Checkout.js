@@ -2,12 +2,16 @@ import React, { useState, useRef } from "react";
 import classes from "./Checkout.module.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+// import { useDispatch } from "react-redux";
+// import { cartActions } from "../../Store/cart-slice";
 
 const isEmpty = (value) => value.trim().length === 0;
 const isPostalCode = (value) => value.trim().length === 5;
 const isPhoneNumber = (value) => value.trim().length > 10;
 
 const Checkout = (props) => {
+  // const dispatch = useDispatch();
+
   const [phoneValue, setPhoneValue] = useState();
   const [formInputValidity, setFormInputValidity] = useState({
     firstName: true,
@@ -26,7 +30,7 @@ const Checkout = (props) => {
   const postalCodeInputRef = useRef();
   const phoneNumberInputRef = useRef();
 
-  const ChechoutHanler = (event) => {
+  const ChechoutHandler = (event) => {
     event.preventDefault();
 
     const enteredFirstName = firstNameInputRef.current.value;
@@ -73,6 +77,7 @@ const Checkout = (props) => {
       postalCode: enteredPostalCode,
       phoneNumber: enteredPhoneNumber,
     });
+    // dispatch(cartActions.checkoutCart());
   };
 
   const firstNameInvalidClasses = `${classes.control} ${
@@ -100,7 +105,7 @@ const Checkout = (props) => {
   }`;
 
   return (
-    <form className={classes.form} onSubmit={ChechoutHanler}>
+    <form className={classes.form} onSubmit={ChechoutHandler}>
       <section className={classes.names}>
         <div className={firstNameInvalidClasses}>
           <label htmlFor="first_name">First Name</label>

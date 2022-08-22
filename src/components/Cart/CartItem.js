@@ -10,7 +10,6 @@ const CartItem = (props) => {
 
   const cartItemAddHandler = () => {
     dispatch(cartActions.addItemToCart({ id, price, name }));
-    console.log(cartActions.addItemToCart);
   };
 
   const cartItemRemoveHandler = () => {
@@ -41,7 +40,7 @@ const CartItem = (props) => {
             Price :<span className={classes.price}>{itemPrice}</span>
           </span>
           <span>
-            Amount :<span className={classes.amount}>x {props.qty}</span>
+            Qty :<span className={classes.qty}>x {props.qty}</span>
           </span>
         </div>
         <div className={classes.actions}>

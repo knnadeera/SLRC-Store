@@ -12,14 +12,13 @@ const Cart = (props) => {
   const [didSubmit, setDidSubmit] = useState(false);
 
   const cartItems = useSelector((state) => state.cart.items);
- 
-  const dispatch = useDispatch();
-
   const totalPrice = useSelector((state) => state.cart.totalPrice);
+
+  const dispatch = useDispatch();
 
   const cartTotalPrice = `$${totalPrice.toFixed(2)}`;
 
-  const hasItems = cartItems.length > 0;  
+  const hasItems = cartItems.length > 0;
 
   const ProceedHandler = () => {
     setIsProceed(true);
@@ -37,9 +36,9 @@ const Cart = (props) => {
         }),
       }
     );
+    dispatch(cartActions.clearCart());
     setIsSubmitting(false);
     setDidSubmit(true);
-    dispatch(cartActions.clearCart);
   };
 
   const cartItem = (
@@ -51,7 +50,7 @@ const Cart = (props) => {
           name={item.name}
           img={item.img}
           price={item.price}
-          qty={item.qty}          
+          qty={item.qty}
         />
       ))}
     </ul>
