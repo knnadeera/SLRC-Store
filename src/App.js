@@ -8,7 +8,7 @@ import classes from "./App.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "./Store/ui-slice";
 import Notification from "./components/UI/Notification";
-import { sendCartData } from "./Store/cart-action";
+import { sendCartData, fetchCartData } from "./Store/cart-action";
 
 let isInitial = true;
 
@@ -21,9 +21,9 @@ const App = (props) => {
   const showUser = useSelector((state) => state.ui.userIsVisible);
   const notification = useSelector((state) => state.ui.notification);
 
-  // useEffect(() => {
-  //   dispatch(fetchCartData());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchCartData());
+  }, [dispatch]);
 
   useEffect(() => {
     if (isInitial) {
@@ -31,8 +31,10 @@ const App = (props) => {
       return;
     }
 
-    dispatch(sendCartData(cart));
-    isShowNotification(true);
+    if (cart.changed) {
+      dispatch(sendCartData(cart));
+      isShowNotification(true);
+    }
   }, [cart, dispatch]);
 
   const cartShownHandler = () => {

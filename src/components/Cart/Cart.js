@@ -13,6 +13,7 @@ const Cart = (props) => {
 
   const cartItems = useSelector((state) => state.cart.items);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
+  const totalQty = useSelector((state) => state.cart.totalQty);
 
   const dispatch = useDispatch();
 
@@ -33,6 +34,8 @@ const Cart = (props) => {
         body: JSON.stringify({
           user: userData,
           orderedItems: cartItems,
+          orderTotalPrice: totalPrice,
+          orderTotalQty: totalQty,
         }),
       }
     );
