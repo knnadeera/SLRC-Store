@@ -1,15 +1,15 @@
 {
-  "main.css": "/SLRC-Store/static/css/main.79834403.chunk.css",
-  "main.js": "/SLRC-Store/static/js/main.5e8b6c78.chunk.js",
-  "main.js.map": "/SLRC-Store/static/js/main.5e8b6c78.chunk.js.map",
+  "main.css": "/SLRC-Store/static/css/main.53f78591.chunk.css",
+  "main.js": "/SLRC-Store/static/js/main.db76aab8.chunk.js",
+  "main.js.map": "/SLRC-Store/static/js/main.db76aab8.chunk.js.map",
   "static/css/1.b99bd1c3.chunk.css": "/SLRC-Store/static/css/1.b99bd1c3.chunk.css",
-  "static/js/1.f760db9c.chunk.js": "/SLRC-Store/static/js/1.f760db9c.chunk.js",
-  "static/js/1.f760db9c.chunk.js.map": "/SLRC-Store/static/js/1.f760db9c.chunk.js.map",
+  "static/js/1.bb851065.chunk.js": "/SLRC-Store/static/js/1.bb851065.chunk.js",
+  "static/js/1.bb851065.chunk.js.map": "/SLRC-Store/static/js/1.bb851065.chunk.js.map",
   "runtime~main.js": "/SLRC-Store/static/js/runtime~main.f3fddd4c.js",
   "runtime~main.js.map": "/SLRC-Store/static/js/runtime~main.f3fddd4c.js.map",
-  "static/css/main.79834403.chunk.css.map": "/SLRC-Store/static/css/main.79834403.chunk.css.map",
+  "static/css/main.53f78591.chunk.css.map": "/SLRC-Store/static/css/main.53f78591.chunk.css.map",
   "static/css/1.b99bd1c3.chunk.css.map": "/SLRC-Store/static/css/1.b99bd1c3.chunk.css.map",
   "index.html": "/SLRC-Store/index.html",
-  "precache-manifest.90d176a0bd44626a42c89cbc166fdefe.js": "/SLRC-Store/precache-manifest.90d176a0bd44626a42c89cbc166fdefe.js",
+  "precache-manifest.831119b31ed8ef34d98906f9ec65f9bc.js": "/SLRC-Store/precache-manifest.831119b31ed8ef34d98906f9ec65f9bc.js",
   "service-worker.js": "/SLRC-Store/service-worker.js"
 }
