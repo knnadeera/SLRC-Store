@@ -16,6 +16,7 @@ const uiSlice = createSlice({
     userToggle(state) {
       state.userIsVisible = !state.userIsVisible;
     },
+    
     userSignUpToggle(state) {
       const userSignUp = !state.userSignUpIsVisible;
       if (userSignUp) {

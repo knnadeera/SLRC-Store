@@ -3,6 +3,11 @@
   cursor: pointer;
 }
 
+.rap a {
+  text-decoration: none;
+  color: black;
+}
+
 .part {
   margin: 1rem 1.5rem 1rem 1.5rem;
   width: 10rem;

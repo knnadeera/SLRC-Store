@@ -9,6 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "./Store/ui-slice";
 import Notification from "./components/UI/Notification";
 import { sendCartData, fetchCartData } from "./Store/cart-action";
+import { Route, Switch } from "react-router-dom";
+import PartDetails from "./pages/PartDetails/PartDetails";
+
 
 let isInitial = true;
 
@@ -76,7 +79,14 @@ const App = (props) => {
           onShowUser={userFormShowHandler}
         />
         <main>
-          <Parts />
+          <Switch>
+            <Route path="/partdetails/:partId">
+              <PartDetails />
+            </Route>
+            <Route path="/">
+              <Parts />
+            </Route>
+          </Switch>
         </main>
       </div>
     </Fragment>
