@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react";
-import useHttp from "../hooks/use-http";
-import { getAllParts } from "../lib/api";
+import useHttp from "../../hooks/use-http";
+import { getAllParts } from "../../lib/api";
 import classes from "./AvailableParts.module.css";
 import PartItems from "./PartsItems/PartItems";
 

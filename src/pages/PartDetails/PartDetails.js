@@ -1,11 +1,12 @@
 import React, { Fragment, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useHttp from "../../components/hooks/use-http";
-import { getSinglePart } from "../../components/lib/api";
+import useHttp from "../../hooks/use-http";
+import { getSinglePart } from "../../lib/api";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart-slice";
 import classes from "./PartDetails.module.css";
 import SideCart from "../../components/Cart/SideCart";
+// import Reviews from "../Reviews/Reviews";
 
 const PartDetails = (props) => {
   const params = useParams();
@@ -54,6 +55,7 @@ const PartDetails = (props) => {
               className={classes.img}
             />
             <div>
+              {/* <Reviews/> */}
               <h2>Price: {itemPrice}</h2>
               <button className={classes.btn} onClick={addToCartHandler}>
                 Add to Cart
