@@ -25,6 +25,7 @@ const Reviews = () => {
 
   const addedReviewHandler = useCallback(() => {
     sendRequest(quoteId);
+    setIsAddingReview(false);
   }, [sendRequest, quoteId]);
 
   let reviews;
@@ -33,16 +34,16 @@ const Reviews = () => {
     reviews = <ReviewsList reviews={loadedReviews} />;
   }
 
-
-
   return (
     <section className={classes.reviews}>
-      <h2>User Reviews</h2>
-      {!isAddingReview && (
-        <button className="btn" onClick={startAddReviewHandler}>
-          Add a Review
-        </button>
-      )}
+      <section >
+        <h2>User Reviews</h2>
+        {!isAddingReview && (
+          <button className="btn" onClick={startAddReviewHandler}>
+            Add a Review
+          </button>
+        )}
+      </section>
       {isAddingReview && (
         <NewReviewForm quoteId={quoteId} onAddedReview={addedReviewHandler} />
       )}

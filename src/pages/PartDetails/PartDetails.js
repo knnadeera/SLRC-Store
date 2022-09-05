@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart-slice";
 import classes from "./PartDetails.module.css";
 import SideCart from "../../components/Cart/SideCart";
-// import Reviews from "../Reviews/Reviews";
+import Reviews from "../Reviews/Reviews";
 
 const PartDetails = (props) => {
   const params = useParams();
@@ -55,14 +55,12 @@ const PartDetails = (props) => {
               className={classes.img}
             />
             <div>
-              {/* <Reviews/> */}
               <h2>Price: {itemPrice}</h2>
               <button className={classes.btn} onClick={addToCartHandler}>
                 Add to Cart
               </button>
             </div>
           </div>
-
           <p>{loadedPart.fullDescription}</p>
           <h3>Specifications:</h3>
           <ul>
@@ -105,7 +103,10 @@ const PartDetails = (props) => {
             {includes.h && <li>{includes.h}</li>}
             {includes.i && <li>{includes.i}</li>}
             {includes.j && <li>{includes.j}</li>}
-          </ul>
+          </ul>{" "}
+          <div className={classes.reviews}>
+            <Reviews />
+          </div>
         </div>
         <div className={classes.side}>
           <SideCart />

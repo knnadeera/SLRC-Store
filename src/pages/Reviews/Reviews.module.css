@@ -1,7 +1,28 @@
-.comments {
+.reviews {
   text-align: center;
+  margin-top: 2rem;
 }
 
-.comments > button {
+.reviews h2{
+  padding-top: 1rem;
+}
+
+.reviews > button {
   font-size: 1.25rem;
+}
+
+.reviews button{
+  max-height: 2rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+.reviews_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.reviews section{
+  box-shadow:  0 2px  rgba(0, 0, 0, 0.25);
+  padding-bottom: 1rem;
 }
