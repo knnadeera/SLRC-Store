@@ -28,7 +28,6 @@ const SideCart = (props) => {
     setIsProceed(false);
   };
 
-  console.log(setIsProceed);
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
@@ -49,7 +48,7 @@ const SideCart = (props) => {
   };
 
   const cartItem = (
-    <ul>
+    <ul className={classes.ul}>
       {cartItems.map((item) => (
         <SideCartItem
           key={item.id}
@@ -115,7 +114,7 @@ const SideCart = (props) => {
 
   return (
     <Fragment>
-      <div>
+      <div className={classes.rap}>
         {!isSubmitting && !didSubmit && cartModalContent}
         {isSubmitting && isSubmittingModalContent}
         {!isSubmitting && didSubmit && didSubmitModalContent}

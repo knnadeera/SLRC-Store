@@ -1,8 +1,12 @@
+.sidecart{
+  padding-bottom: .5rem;
+}
+
 .cart_items {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 30rem;
+  max-height: 30.8rem;
   overflow: auto;
 
 }
@@ -47,4 +51,13 @@
 .checkout {
   display: flex;
   flex-direction: column;
+}
+
+.rap{
+  box-shadow: 0 10px 10px  rgba(0, 0, 0, 0.25);
+}
+
+.ul{
+  display: flex;
+  flex-direction: column-reverse;
 }

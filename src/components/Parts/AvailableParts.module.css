@@ -36,3 +36,23 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 425px){
+  .parts {
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+    margin: 2rem 1;
+    animation: parts-appear 1s ease-out forwards;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .parts ul {
+    max-width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

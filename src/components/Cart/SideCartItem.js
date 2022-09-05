@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import classes from "./SideCartItem.module.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart-slice";
+import { NavLink } from "react-router-dom";
 
 const SideCartItem = (props) => {
   const dispatch = useDispatch();
@@ -24,27 +25,32 @@ const SideCartItem = (props) => {
 
   return (
     <Fragment>
+      <li className={classes["sidecart-item"]}>
+        <div className={classes.summary}>
+          <img src={props.img} alt="product" width="50" height="50" />
+          <NavLink to={`/partdetails/${props.id}`}>
+            <h4>{props.name}</h4>
+          </NavLink>
+        </div>
+
+        <div className={classes.item_body}>
+          <div className={classes.item_total}>
+            <span>
+              Price :<span className={classes.price}>{itemPrice}</span>
+            </span>
+            <span>
+              Qty :<span className={classes.qty}>x {props.qty}</span>
+            </span>
+          </div>
+          <div className={classes.actions}>
+            <button onClick={cartItemRemoveHandler}>−</button>
+            <button onClick={cartItemAddHandler}>+</button>
+          </div>
+        </div>
+      </li>
       <button className={classes.remove} onClick={removeCartItemHandler}>
         x
       </button>
-      <li className={classes["sidecart-item"]}>
-        <div className={classes.summary}>
-          <img src={props.img} alt="product" width="50" height="50" /><h4>{props.name}</h4>
-        </div>
-        
-        <div className={classes.total}>
-          <span>
-            Price :<span className={classes.price}>{itemPrice}</span>
-          </span>
-          <span>
-            Qty :<span className={classes.qty}>x {props.qty}</span>
-          </span>
-        </div>
-        <div className={classes.actions}>
-          <button onClick={cartItemRemoveHandler}>−</button>
-          <button onClick={cartItemAddHandler}>+</button>
-        </div>
-      </li>
     </Fragment>
   );
 };

@@ -1,4 +1,4 @@
-.part_details {
+.part_details_layout {
   display: flex;
 }
 
@@ -15,12 +15,18 @@
   font-weight: bold;
   font-size: 1rem;
   width: 1.5rem;
+  max-height: 1.3rem;
   text-align: center;
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
-  margin-left: 1rem;
-  margin: 0.25rem;
+  margin: 1rem 0 0 1rem;
+}
+
+.upper_body{
+  display: flex;
+  justify-content: space-around;
+align-items: flex-end;  
 }
 
 .side {
@@ -34,8 +40,17 @@
   padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
+.details h1 {
+  color: #fcb900;
+}
+
 .details h2 {
   color: #fcb900;
+}
+
+.partdetails-title{
+    display: flex;
+    justify-content: space-between;
 }
 
 .btn {
@@ -47,4 +62,27 @@
   padding: 0.25rem 0.5rem;
   border-radius: 15px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 425px) {
+  .part_details_layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .details {
+    width: 100%;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .side {
+    align-items: flex-end;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    width: 100%;
+  }
+
+  .img{
+    width: 100%;
+    height: inherit;
+  }
 }

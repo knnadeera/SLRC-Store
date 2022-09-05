@@ -1,7 +1,7 @@
 .sidecart-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   border-bottom: 2px solid #fcb900;
   padding: 0;
   width: 10rem;
@@ -18,19 +18,31 @@
   align-items: center;
 }
 
+.summary a {
+  text-decoration: none;
+  color: black;
+}
+
 .price {
   font-weight: bold;
   color: #ff6900;
 }
 
-.total {
+.item_body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 100%;
   font-weight: bold;
   color: #fcb900;
   margin: 0.5rem 0 0 0;
+}
+
+.item_total {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .qty {
@@ -49,29 +61,29 @@
   align-items: center;
   color: red;
   border: 1px solid #ccc;
-  padding: 0.01rem 0rem;
+  padding: 0;
   border-radius: 3px;
   font: inherit;
   font-weight: bold;
   font-size: 1rem;
   width: 1rem;
+  height: 1.25rem;
   text-align: center;
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
-  margin-left: 1rem;
-  margin: 0.25rem;
+  margin: 0.1rem 0 0.5rem -2rem;
 }
 
 .actions {
   display: flex;
   flex-direction: column;
+  margin: 0 0 0 1.7rem;
 }
 
-@media (min-width: 768px) {
-  .actions {
-    flex-direction: row;
-  }
+.actions button {
+  max-width: 1.6rem;
+  max-height: 1.5rem;
 }
 
 .sidecart-item button {
@@ -92,4 +104,10 @@
 .sidecart-item button:active {
   background-color: #fcb900;
   color: white;
+}
+
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: row;
+  }
 }

@@ -86,6 +86,7 @@ const App = (props) => {
             <Route path="/">
               <Parts />
             </Route>
+            
           </Switch>
         </main>
       </div>

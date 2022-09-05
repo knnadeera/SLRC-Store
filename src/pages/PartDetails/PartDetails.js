@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useHttp from "../../components/hooks/use-http";
 import { getSinglePart } from "../../components/lib/api";
 import { useDispatch } from "react-redux";
@@ -36,31 +36,31 @@ const PartDetails = (props) => {
   const itemPrice = `$${loadedPart.price.toFixed(2)}`;
 
   const spec = loadedPart.specifications;
-
-  console.log(spec.a);
+  const includes = loadedPart.includes;
 
   return (
     <Fragment>
-      <div className={classes.part_details}>
+      <div className={classes.part_details_layout}>
         <div className={classes.details}>
-          <div>
+          <div className={classes["partdetails-title"]}>
             <h1>{loadedPart.name}</h1>
-            <NavLink to="/" activeClassName={classes.close}>
-              X
-            </NavLink>
+          </div>
+          <div className={classes.upper_body}>
+            <img
+              src={loadedPart.img}
+              alt="product"
+              width="300"
+              height="300"
+              className={classes.img}
+            />
+            <div>
+              <h2>Price: {itemPrice}</h2>
+              <button className={classes.btn} onClick={addToCartHandler}>
+                Add to Cart
+              </button>
+            </div>
           </div>
 
-          <img
-            src={loadedPart.img}
-            alt="product"
-            width="300"
-            height="300"
-            className={classes.img}
-          />
-          <div>
-            <h2>Price: {itemPrice}</h2>{" "}
-            <button className={classes.btn} onClick={addToCartHandler}>Add to Cart</button>
-          </div>
           <p>{loadedPart.fullDescription}</p>
           <h3>Specifications:</h3>
           <ul>
@@ -90,6 +90,19 @@ const PartDetails = (props) => {
             {spec.x && <li>{spec.x}</li>}
             {spec.y && <li>{spec.y}</li>}
             {spec.z && <li>{spec.z}</li>}
+          </ul>
+          <h3>Includes:</h3>
+          <ul>
+            {includes.a && <li>{includes.a}</li>}
+            {includes.b && <li>{includes.b}</li>}
+            {includes.c && <li>{includes.c}</li>}
+            {includes.d && <li>{includes.d}</li>}
+            {includes.e && <li>{includes.e}</li>}
+            {includes.f && <li>{includes.f}</li>}
+            {includes.g && <li>{includes.g}</li>}
+            {includes.h && <li>{includes.h}</li>}
+            {includes.i && <li>{includes.i}</li>}
+            {includes.j && <li>{includes.j}</li>}
           </ul>
         </div>
         <div className={classes.side}>

@@ -30,3 +30,12 @@
 .icon {
   color: white;
 }
+
+@media (max-width: 425px) {
+.contacts{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+}  
+}
