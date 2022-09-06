@@ -4,7 +4,6 @@
   align-items: flex-start;
   border-bottom: 2px solid #fcb900;
   padding: 0;
-  width: 10rem;
   margin-left: -1.5rem;
 }
 
@@ -14,9 +13,9 @@
 }
 
 .summary {
-  width: 12rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .summary a {
@@ -29,21 +28,26 @@
   color: #ff6900;
 }
 
+.item_total {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 1.7rem;
+}
+
 .item_body {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   max-width: 100%;
   font-weight: bold;
   color: #fcb900;
   margin: 0.5rem 0 0 0;
-}
-
-.item_total {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
 
 .qty {
@@ -67,11 +71,7 @@
   cursor: pointer;
 }
 
-.actions {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 0 1.7rem;
-}
+
 
 .actions button {
   max-width: 1.6rem;

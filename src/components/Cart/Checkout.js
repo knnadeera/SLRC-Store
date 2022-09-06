@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, Fragment } from "react";
 import classes from "./Checkout.module.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
@@ -8,7 +8,6 @@ const isPostalCode = (value) => value.trim().length === 5;
 const isPhoneNumber = (value) => value.trim().length > 10;
 
 const Checkout = (props) => {
-
   const [phoneValue, setPhoneValue] = useState();
   const [formInputValidity, setFormInputValidity] = useState({
     firstName: true,
@@ -101,8 +100,8 @@ const Checkout = (props) => {
     formInputValidity.phoneNumber ? "" : classes.invalid
   }`;
 
-  return (
-    <form className={classes.form} onSubmit={ChechoutHandler}>
+  const formInputs = (
+    <Fragment>
       <section className={classes.names}>
         <div className={firstNameInvalidClasses}>
           <label htmlFor="first_name">First Name</label>
@@ -155,9 +154,15 @@ const Checkout = (props) => {
           value={phoneValue}
           onChange={setPhoneValue}
           ref={phoneNumberInputRef}
-        />
+        />{" "}
         {!formInputValidity.phoneNumber && <p>Please Enter the Phone Number</p>}
       </div>
+    </Fragment>
+  );
+
+  return (
+    <form className={classes.form} onSubmit={ChechoutHandler}>
+      {formInputs}
       <div className={classes.action}>
         <button type="button" className={classes.close} onClick={props.onClose}>
           Close

@@ -3,6 +3,7 @@ import useHttp from "../../hooks/use-http";
 import { getAllParts } from "../../lib/api";
 import classes from "./AvailableParts.module.css";
 import PartItems from "./PartsItems/PartItems";
+import LoadingSpinner from "../../components/UI/LoadingSpinner";
 
 const AvailableParts = (props) => {
   const { sendRequest, status, data: loadedParts, error } = useHttp(
@@ -16,9 +17,9 @@ const AvailableParts = (props) => {
 
   if (status === "pending") {
     return (
-      <section>
-        <p className={classes.loading}>Loading....</p>
-      </section>
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
     );
   }
 

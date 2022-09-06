@@ -4,13 +4,13 @@ import Contacts from "./components/Layout/Contacts";
 import Header from "./components/Layout/Header";
 import User from "./components/Layout/User/User";
 import Parts from "./components/Parts/parts";
-import classes from "./App.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { uiActions } from "./Store/ui-slice";
 import Notification from "./components/UI/Notification";
+import PartDetails from "./pages/PartDetails/PartDetails";
+import classes from "./App.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { uiActions } from "./Store/ui-slice";
 import { sendCartData, fetchCartData } from "./Store/cart-action";
 import { Route, Switch } from "react-router-dom";
-import PartDetails from "./pages/PartDetails/PartDetails";
 
 
 let isInitial = true;
@@ -59,6 +59,7 @@ const App = (props) => {
   const closeHandler = () => {
     isShowNotification(false);
   };
+  
 
   return (
     <Fragment>
@@ -86,7 +87,6 @@ const App = (props) => {
             <Route path="/">
               <Parts />
             </Route>
-            
           </Switch>
         </main>
       </div>

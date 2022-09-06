@@ -7,6 +7,7 @@ import { cartActions } from "../../Store/cart-slice";
 import classes from "./PartDetails.module.css";
 import SideCart from "../../components/Cart/SideCart";
 import Reviews from "../Reviews/Reviews";
+import LoadingSpinner from "../../components/UI/LoadingSpinner";
 
 const PartDetails = (props) => {
   const [showReviews, isShowReviews] = useState(false);
@@ -22,7 +23,11 @@ const PartDetails = (props) => {
   }, [sendRequest, partId]);
 
   if (!loadedPart) {
-    return <p>No details founded</p>;
+    return (
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   const addToCartHandler = () => {
@@ -52,7 +57,7 @@ const PartDetails = (props) => {
   };
 
   //part Detail section
-   
+
   const description = (
     <section>
       <p>{loadedPart.fullDescription}</p>

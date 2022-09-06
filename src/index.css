@@ -10,3 +10,11 @@ body {
   margin: 0 6%;
   background-color: #3f3f3f;
 }
+
+.centered {
+  margin: 3rem auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
