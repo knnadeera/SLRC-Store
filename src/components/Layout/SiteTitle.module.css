@@ -6,9 +6,10 @@
   padding-right: 15px;
 }
 
-.site-title__a {
+.site-title a {
   color: #fcb900;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .site-title p {

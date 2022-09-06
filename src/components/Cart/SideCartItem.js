@@ -32,7 +32,6 @@ const SideCartItem = (props) => {
             <h4>{props.name}</h4>
           </NavLink>
         </div>
-
         <div className={classes.item_body}>
           <div className={classes.item_total}>
             <span>

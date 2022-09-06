@@ -4,6 +4,7 @@ import SideCartItem from "./SideCartItem";
 import Checkout from "./Checkout";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart-slice";
+import Modal from "../UI/Modal";
 
 const SideCart = (props) => {
   const [isProceed, setIsProceed] = useState(false);
@@ -47,6 +48,12 @@ const SideCart = (props) => {
     setDidSubmit(true);
   };
 
+  const didSubmiCloseHandler = () => {
+    setDidSubmit(false);
+    setIsSubmitting(false);
+    setIsProceed(false);
+  };
+
   const cartItem = (
     <ul className={classes.ul}>
       {cartItems.map((item) => (
@@ -86,11 +93,14 @@ const SideCart = (props) => {
       </div>
 
       {isProceed && (
-        <Checkout
-          onConfirm={submitOrderHandler}
-          className={classes.checkout}
-          onClose={closeHandler}
-        />
+        // <Cart onClose={closeHandler}/>
+        <Modal>
+          <Checkout
+            onConfirm={submitOrderHandler}
+            className={classes.checkout}
+            onClose={closeHandler}
+          />
+        </Modal>
       )}
     </Fragment>
   );
@@ -105,7 +115,10 @@ const SideCart = (props) => {
         Thank you..!
       </p>
       <div className={classes.actions}>
-        <button className={classes["button--alt"]} onClick={props.onClose}>
+        <button
+          className={classes["button--alt"]}
+          onClick={didSubmiCloseHandler}
+        >
           Close
         </button>
       </div>

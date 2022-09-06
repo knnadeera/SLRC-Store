@@ -36,6 +36,10 @@
   max-height: 100%;
 }
 
+.side p{
+  text-align: center;
+}
+
 .details {
   width: 75rem;
   padding: 0 1.5rem 1.5rem 1.5rem;
@@ -72,7 +76,19 @@
   border-radius: 5px;
 }
 
-@media screen and (max-width: 425px) {
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  color: #fcb900;
+  cursor: pointer;
+}
+
+.tabs :hover,
+.tabs :active {
+  border-bottom: 3px solid #fcb900;
+}
+
+@media screen and (max-width: 768px) {
   .part_details_layout {
     display: flex;
     flex-direction: column;

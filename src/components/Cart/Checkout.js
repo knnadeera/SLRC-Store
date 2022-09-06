@@ -2,15 +2,12 @@ import React, { useState, useRef } from "react";
 import classes from "./Checkout.module.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-// import { useDispatch } from "react-redux";
-// import { cartActions } from "../../Store/cart-slice";
 
 const isEmpty = (value) => value.trim().length === 0;
 const isPostalCode = (value) => value.trim().length === 5;
 const isPhoneNumber = (value) => value.trim().length > 10;
 
 const Checkout = (props) => {
-  // const dispatch = useDispatch();
 
   const [phoneValue, setPhoneValue] = useState();
   const [formInputValidity, setFormInputValidity] = useState({

@@ -4,10 +4,10 @@
 
 .cart_items {
   list-style: none;
-  margin: 0;
+  margin: 0 1rem 0 0;
   padding: 0;
   max-height: 30.8rem;
-  overflow: auto;
+  overflow:  auto;
 
 }
 
