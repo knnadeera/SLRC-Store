@@ -1,10 +1,12 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, Suspense, useState } from "react";
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
-import Checkout from "./Checkout";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart-slice";
+import LoadingSpinner from "../UI/LoadingSpinner";
+
+const Checkout = React.lazy(() => import("./Checkout"));
 
 const Cart = (props) => {
   const [isProceed, setIsProceed] = useState(false);
@@ -60,7 +62,13 @@ const Cart = (props) => {
   );
 
   const cartModalContent = (
-    <Fragment>
+    <Suspense
+      fallback={
+        <div className="centered">
+          <LoadingSpinner />
+        </div>
+      }
+    >
       <div className={classes.cart_items}>{!isProceed && cartItem}</div>
       {!isProceed && (
         <Fragment>
@@ -85,7 +93,7 @@ const Cart = (props) => {
           onClose={props.onClose}
         />
       )}
-    </Fragment>
+    </Suspense>
   );
 
   const isSubmittingModalContent = <p>Sending order data....</p>;

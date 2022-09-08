@@ -1,17 +1,18 @@
-import React, { Fragment, useEffect, useState } from "react";
-import Cart from "./components/Cart/Cart";
+import React, { useEffect, useState, Suspense } from "react";
 import Contacts from "./components/Layout/Contacts";
 import Header from "./components/Layout/Header";
-import User from "./components/Layout/User/User";
-import Parts from "./components/Parts/parts";
-import Notification from "./components/UI/Notification";
-import PartDetails from "./pages/PartDetails/PartDetails";
 import classes from "./App.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "./Store/ui-slice";
 import { sendCartData, fetchCartData } from "./Store/cart-action";
 import { Route, Switch } from "react-router-dom";
+import LoadingSpinner from "./components/UI/LoadingSpinner";
 
+const PartDetails = React.lazy(() => import("./pages/PartDetails/PartDetails"));
+const Notification = React.lazy(() => import("./components/UI/Notification"));
+const Cart = React.lazy(() => import("./components/Cart/Cart"));
+const User = React.lazy(() => import("./components/Layout/User/User"));
+const Parts = React.lazy(() => import("./components/Parts/parts"));
 
 let isInitial = true;
 
@@ -59,10 +60,15 @@ const App = (props) => {
   const closeHandler = () => {
     isShowNotification(false);
   };
-  
 
   return (
-    <Fragment>
+    <Suspense
+      fallback={
+        <div className="centered">
+          <LoadingSpinner />
+        </div>
+      }
+    >
       {showNotification && notification && (
         <Notification
           onClose={closeHandler}
@@ -90,7 +96,7 @@ const App = (props) => {
           </Switch>
         </main>
       </div>
-    </Fragment>
+    </Suspense>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
 import { getSinglePart } from "../../lib/api";
@@ -6,8 +6,9 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart-slice";
 import classes from "./PartDetails.module.css";
 import SideCart from "../../components/Cart/SideCart";
-import Reviews from "../Reviews/Reviews";
 import LoadingSpinner from "../../components/UI/LoadingSpinner";
+
+const Reviews = React.lazy(()=>import("../Reviews/Reviews"))
 
 const PartDetails = (props) => {
   const [showReviews, isShowReviews] = useState(false);
@@ -136,7 +137,13 @@ const PartDetails = (props) => {
   );
 
   return (
-    <Fragment>
+    <Suspense
+      fallback={
+        <div className="centered">
+          <LoadingSpinner />
+        </div>
+      }
+    >
       <div className={classes.part_details_layout}>
         {details}
         <div className={classes.side}>
@@ -144,7 +151,7 @@ const PartDetails = (props) => {
           <SideCart />
         </div>
       </div>
-    </Fragment>
+    </Suspense>
   );
 };
 
