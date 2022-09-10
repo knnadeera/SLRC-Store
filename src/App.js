@@ -4,15 +4,16 @@ import Header from "./components/Layout/Header";
 import classes from "./App.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "./Store/ui-slice";
-import { sendCartData, fetchCartData } from "./Store/cart-action";
+import { sendCartData, fetchCartData } from "./lib/cart-action";
 import { Route, Switch } from "react-router-dom";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
+// import AddParts from "./pages/Admin/AddParts";
 
 const PartDetails = React.lazy(() => import("./pages/PartDetails/PartDetails"));
 const Notification = React.lazy(() => import("./components/UI/Notification"));
 const Cart = React.lazy(() => import("./components/Cart/Cart"));
 const User = React.lazy(() => import("./components/Layout/User/User"));
-const Parts = React.lazy(() => import("./components/Parts/parts"));
+const Parts = React.lazy(() => import("./components/Parts/Parts"));
 
 let isInitial = true;
 
@@ -85,6 +86,7 @@ const App = (props) => {
           onShowCart={cartShownHandler}
           onShowUser={userFormShowHandler}
         />
+        {/* <AddParts/> */}
         <main>
           <Switch>
             <Route path="/partdetails/:partId">

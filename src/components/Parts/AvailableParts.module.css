@@ -25,6 +25,31 @@
   color: red;
 }
 
+.sorting{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.sorting h4{
+  color: #fcb900;
+  margin: 1rem 3rem;
+  cursor: pointer;
+}
+
+.sorting button{
+  font: inherit;
+  cursor: pointer;
+  background-color: #fcb900;
+  border: none;
+  color: black;
+  max-height: 2rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 15px;
+  font-weight: bold;
+  margin: 1rem 3rem;
+}
+
 @keyframes parts-appear {
   from {
     opacity: 0;

@@ -25,7 +25,7 @@ const NewReviewForm = (props) => {
 
     // optional: Could validate here
 
-    sendRequest({ reviewData: { text: enteredText }, quoteId: props.quoteId});
+    sendRequest({ reviewData: { text: enteredText }, partId: props.partId});
   };
 
   return (

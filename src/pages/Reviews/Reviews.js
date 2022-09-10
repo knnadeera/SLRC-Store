@@ -13,20 +13,20 @@ const Reviews = () => {
 
   const { sendRequest, status, data: loadedReviews } = useHttp(getAllReviews);
 
-  const { quoteId } = params;
+  const { partId } = params;
 
   useEffect(() => {
-    sendRequest(quoteId);
-  }, [quoteId, sendRequest]);
+    sendRequest(partId);
+  }, [partId, sendRequest]);
 
   const startAddReviewHandler = () => {
     setIsAddingReview(true);
   };
 
   const addedReviewHandler = useCallback(() => {
-    sendRequest(quoteId);
+    sendRequest(partId);
     setIsAddingReview(false);
-  }, [sendRequest, quoteId]);
+  }, [sendRequest, partId]);
 
   let reviews;
 
@@ -45,7 +45,7 @@ const Reviews = () => {
         )}
       </section>
       {isAddingReview && (
-        <NewReviewForm quoteId={quoteId} onAddedReview={addedReviewHandler} />
+        <NewReviewForm partId={partId} onAddedReview={addedReviewHandler} />
       )}
       {reviews}
     </section>

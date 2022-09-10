@@ -8,7 +8,7 @@ import classes from "./PartDetails.module.css";
 import SideCart from "../../components/Cart/SideCart";
 import LoadingSpinner from "../../components/UI/LoadingSpinner";
 
-const Reviews = React.lazy(()=>import("../Reviews/Reviews"))
+const Reviews = React.lazy(() => import("../Reviews/Reviews"));
 
 const PartDetails = (props) => {
   const [showReviews, isShowReviews] = useState(false);

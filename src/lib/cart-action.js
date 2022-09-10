@@ -1,5 +1,5 @@
-import { uiActions } from "./ui-slice";
-import { cartActions } from "./cart-slice";
+import { uiActions } from "../Store/ui-slice";
+import { cartActions } from "../Store/cart-slice";
 
 export const fetchCartData = () => {
   return async (dispatch) => {
@@ -53,6 +53,7 @@ export const sendCartData = (cart) => {
         {
           method: "PUT",
           body: JSON.stringify({
+            a: cart.a,
             items: cart.items,
             totalPrice: cart.totalPrice,
             totalQty: cart.totalQty,

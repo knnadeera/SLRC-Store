@@ -7,6 +7,7 @@ const cartSlice = createSlice({
     totalPrice: 0,
     totalQty: 0,
     changed: false,
+    a:''
   },
   reducers: {
     replaceCart(state, action) {
@@ -22,6 +23,7 @@ const cartSlice = createSlice({
       state.changed = true;
       if (!existingItem) {
         state.items.push({
+          a:newItem.a,
           id: newItem.id,
           name: newItem.name,
           img: newItem.img,

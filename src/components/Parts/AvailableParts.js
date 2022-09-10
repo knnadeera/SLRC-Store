@@ -1,35 +1,35 @@
-import React, { Fragment, useEffect } from "react";
-import useHttp from "../../hooks/use-http";
-import { getAllParts } from "../../lib/api";
+import React, { Fragment } from "react";
 import classes from "./AvailableParts.module.css";
 import PartItems from "./PartsItems/PartItems";
-import LoadingSpinner from "../../components/UI/LoadingSpinner";
+import { useHistory, useLocation } from "react-router-dom";
+
+const sortParts = (parts, ascending) => {
+  return parts.sort((partA, partB) => {
+    if (ascending) {
+      return partA.price < partB.price ? 1 : -1;
+    } else {
+      return partA.price > partB.price ? 1 : -1;
+    }
+  });
+};
 
 const AvailableParts = (props) => {
-  const { sendRequest, status, data: loadedParts, error } = useHttp(
-    getAllParts,
-    true
-  );
+  const history = useHistory();
+  const location = useLocation();
 
-  useEffect(() => {
-    sendRequest();
-  }, [sendRequest]);
+  const queryParams = new URLSearchParams(location.search);
 
-  if (status === "pending") {
-    return (
-      <div className="centered">
-        <LoadingSpinner />
-      </div>
+  const isSortingAscending = queryParams.get("sort") === "high-low";
+
+  const isSorting = queryParams.get("sort");
+
+  const sortedParts = sortParts(props.parts, isSortingAscending);
+
+  const changeSortingHandler = () => {
+    history.push(
+      "/parts?sort=" + (isSortingAscending ? "low-high" : "high-low")
     );
-  }
-
-  if (error) {
-    return (
-      <section>
-        <p className={classes.haserror}>{error}</p>
-      </section>
-    );
-  }
+  };
 
   // useEffect(() => {
   //   const fetchParts = async () => {
@@ -79,7 +79,7 @@ const AvailableParts = (props) => {
   //   );
   // }
 
-  const partList = loadedParts.map((parts) => (
+  const partList = sortedParts.map((parts) => (
     <PartItems
       key={parts.id}
       id={parts.id}
@@ -93,6 +93,17 @@ const AvailableParts = (props) => {
 
   return (
     <Fragment>
+      <div className={classes.sorting}>
+        <button onClick={changeSortingHandler}>
+          Show {isSortingAscending ? "Low to High" : "High to Low"}
+        </button>
+        {isSorting && (
+          <h4 onClick={changeSortingHandler}>
+            Sort by: {isSortingAscending ? "High to Low" : "Low to High"} List
+          </h4>
+        )}
+      </div>
+
       <section className={classes.parts}>
         <ul>{partList}</ul>
       </section>
