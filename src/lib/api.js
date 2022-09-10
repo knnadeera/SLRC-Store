@@ -38,7 +38,7 @@ export async function getSinglePart(partId) {
   return loadedPart;
 }
 
-export async function addPart(partData) {
+export async function addNewPart(partData) {
   const response = await fetch(`${FIREBASE_DOMAIN}/parts.json`, {
     method: 'POST',
     body: JSON.stringify(partData),

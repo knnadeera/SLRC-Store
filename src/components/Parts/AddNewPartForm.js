@@ -15,10 +15,12 @@ const AddNewPartForm = (props) => {
     const enteredDescription = descriptionInputRef.current.value;
     const enteredFullDescription = fullDescriptionInputRef.current.value;
 
+    const price = Number(enteredPrice);
+
     props.onAddNewPart({
       name: enteredName,
       img: enteredImg,
-      price: enteredPrice,
+      price: price,
       description: enteredDescription,
       fullDescription: enteredFullDescription,
     });
@@ -37,17 +39,6 @@ const AddNewPartForm = (props) => {
         <textarea type="text" ref={descriptionInputRef} />
         <label htmlFor="Full Description">Full Description</label>
         <textarea type="text" ref={fullDescriptionInputRef} />
-      </section>
-      <section>
-        {/* <label>Specifications</label>
-    {specInputs.map((specInput) => (
-      <section key={specInput.key}>
-        <input name="key" value={specInput.key} />
-        <label>spec</label>
-        <input type="text" />
-        <button onClick={specInputShowHandler}>+</button>
-      </section>
-    ))} */}
       </section>
       <button>Post</button>
     </form>

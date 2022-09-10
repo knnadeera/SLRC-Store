@@ -1,19 +1,25 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import AddNewPartForm from "../../components/Parts/AddNewPartForm";
 import useHttp from "../../hooks/use-http";
-// import { addPart } from "../../lib/api";
+import { addNewPart } from "../../lib/api";
 
 const AddParts = (props) => {
-  useHttp()
-  // const [specInputs, isSpecInputs] = useState([{ key: "", spec: "" }]);
+  const { sendRequest, status } = useHttp(addNewPart);
+  const history = useHistory
 
-  // const specInputShowHandler = () => {
-  //   isSpecInputs([...specInputs, { key: "", spec: "" }]);
-  // };
+  useEffect(() => {
+    if (status === "completed") {
+      history.push("/");
+    }
+  }, [status, history]);
 
-  const newPartAddHandler = (newPartDdata) => {
+  const newPartAddHandler = (newPartData) => {
+    sendRequest(newPartData);
 
+    history.push("/");
   };
+
 
   return (
     <Fragment>

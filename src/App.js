@@ -7,7 +7,7 @@ import { uiActions } from "./Store/ui-slice";
 import { sendCartData, fetchCartData } from "./lib/cart-action";
 import { Route, Switch } from "react-router-dom";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
-// import AddParts from "./pages/Admin/AddParts";
+import AddParts from "./pages/Admin/AddParts";
 
 const PartDetails = React.lazy(() => import("./pages/PartDetails/PartDetails"));
 const Notification = React.lazy(() => import("./components/UI/Notification"));
@@ -86,7 +86,7 @@ const App = (props) => {
           onShowCart={cartShownHandler}
           onShowUser={userFormShowHandler}
         />
-        {/* <AddParts/> */}
+        <AddParts/>
         <main>
           <Switch>
             <Route path="/partdetails/:partId">
