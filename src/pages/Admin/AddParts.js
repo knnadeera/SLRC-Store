@@ -6,7 +6,7 @@ import { addNewPart } from "../../lib/api";
 
 const AddParts = (props) => {
   const { sendRequest, status } = useHttp(addNewPart);
-  const history = useHistory
+  const history = useHistory()
 
   useEffect(() => {
     if (status === "completed") {

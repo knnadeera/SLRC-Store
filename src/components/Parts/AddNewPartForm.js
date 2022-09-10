@@ -8,7 +8,7 @@ const AddNewPartForm = (props) => {
   const fullDescriptionInputRef = useRef();
 
   const submitHandler = (event) => {
-    // event.preventDefault()
+    event.preventDefault()
     const enteredName = nameInputRef.current.value;
     const enteredImg = imgInputRef.current.value;
     const enteredPrice = priceInputRef.current.value;
