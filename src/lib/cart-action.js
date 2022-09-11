@@ -53,7 +53,6 @@ export const sendCartData = (cart) => {
         {
           method: "PUT",
           body: JSON.stringify({
-            a: cart.a,
             items: cart.items,
             totalPrice: cart.totalPrice,
             totalQty: cart.totalQty,

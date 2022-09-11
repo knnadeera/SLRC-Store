@@ -31,6 +31,23 @@ const PartDetails = (props) => {
     );
   }
 
+  // useEffect(() => {
+  //     sendRequest(partId.includes.includesId);
+  //     console.log(sendRequest)
+  //   }, [sendRequest, partId.includes.includesId]);
+
+  //   if (status === "pending") {
+  //     return (
+  //       <div className="centered">
+  //         <LoadingSpinner />
+  //       </div>
+  //     );
+  //   }
+
+  //   if (error) {
+  //     return <p className="centered focused">{error}</p>;
+  //   }
+
   const addToCartHandler = () => {
     dispatch(
       cartActions.addItemToCart({
@@ -92,6 +109,7 @@ const PartDetails = (props) => {
         {spec.z && <li>{spec.z}</li>}
       </ul>
       <h3>Includes:</h3>
+
       <ul>
         {includes.a && <li>{includes.a}</li>}
         {includes.b && <li>{includes.b}</li>}

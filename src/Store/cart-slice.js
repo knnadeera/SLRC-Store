@@ -7,7 +7,6 @@ const cartSlice = createSlice({
     totalPrice: 0,
     totalQty: 0,
     changed: false,
-    a:''
   },
   reducers: {
     replaceCart(state, action) {

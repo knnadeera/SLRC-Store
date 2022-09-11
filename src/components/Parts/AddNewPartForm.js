@@ -1,14 +1,16 @@
-import React, { useRef } from "react";
+import React, { Fragment, useRef, useState } from "react";
+// import SpecInputs from "./SpecInputs";
 
 const AddNewPartForm = (props) => {
+  const [specInputs, setSpecInputs] = useState([{ spec: "" }]);
+  const [includeInputs, setIncludeInputs] = useState([{ include: "" }]);
   const nameInputRef = useRef();
   const imgInputRef = useRef();
   const priceInputRef = useRef();
   const descriptionInputRef = useRef();
   const fullDescriptionInputRef = useRef();
 
-  const submitHandler = (event) => {
-    event.preventDefault()
+  const submitHandler = () => {
     const enteredName = nameInputRef.current.value;
     const enteredImg = imgInputRef.current.value;
     const enteredPrice = priceInputRef.current.value;
@@ -23,11 +25,35 @@ const AddNewPartForm = (props) => {
       price: price,
       description: enteredDescription,
       fullDescription: enteredFullDescription,
+      specification: { specInputs },
+      includes: { includeInputs },
     });
   };
 
+  const specChangeHandler = (index, event) => {
+    const values = [...specInputs];
+    values[index] = event.target.value;
+    setSpecInputs(values);
+    console.log(index);
+  };
+
+  const includeChangeHandler = (index, event) => {
+    const values = [...includeInputs];
+    values[index] = event.target.value;
+    setIncludeInputs(values);
+    console.log(index);
+  };
+
+  const specAddHandler = () => {
+    setSpecInputs([...specInputs, { spec: "" }]);
+  };
+
+  const includeAddHandler = () => {
+    setIncludeInputs([...includeInputs, { include: "" }]);
+  };
+
   return (
-    <form onSubmit={submitHandler}>
+    <Fragment>
       <section>
         <label htmlFor="Name">Name</label>
         <input type="text" ref={nameInputRef}></input>
@@ -40,8 +66,32 @@ const AddNewPartForm = (props) => {
         <label htmlFor="Full Description">Full Description</label>
         <textarea type="text" ref={fullDescriptionInputRef} />
       </section>
-      <button>Post</button>
-    </form>
+      <div>
+        <h4>Specifications</h4>
+        {specInputs.map((specInputField, index) => (
+          <div key={index}>
+            <input
+              value={specInputField.value}
+              onChange={(event) => specChangeHandler(index, event)}
+            />
+            <button onClick={specAddHandler}>Add Spec</button>
+          </div>
+        ))}
+      </div>
+      <div>
+        <h4>Includes</h4>
+        {includeInputs.map((includeInputField, index) => (
+          <div key={index}>
+            <input
+              value={includeInputField.value}
+              onChange={(event) => includeChangeHandler(index, event)}
+            />
+            <button onClick={includeAddHandler}>Add Include</button>
+          </div>
+        ))}
+      </div>
+      <button onClick={submitHandler}>Post</button>
+    </Fragment>
   );
 };
 
