@@ -1,11 +1,9 @@
 .form {
-  text-align: right;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 0.5rem;
-
 }
 
 .form button {
@@ -17,6 +15,7 @@
   padding: 0.25rem 0.5rem;
   border-radius: 15px;
   font-weight: bold;
+  margin: 0.1rem;
 }
 
 .form button:hover,
@@ -61,12 +60,17 @@
 
 @media (max-width: 425px) {
   .form {
+    text-align: center;
     display: flex;
-    margin: -40%;    
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: -40% 0 0 0;
     padding-top: 5px;
   }
   .form button {
+    max-width: 5rem;
     font-size: 70%;
+    margin: .1rem 0 0 0;
     font: center;
     font-weight: normal;
   }

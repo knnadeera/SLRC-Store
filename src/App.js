@@ -7,7 +7,7 @@ import { uiActions } from "./Store/ui-slice";
 import { sendCartData, fetchCartData } from "./lib/cart-action";
 import { Route, Switch } from "react-router-dom";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
-import AddParts from "./pages/Admin/AddParts";
+import AddNewParts from "./pages/Admin/AddNewParts";
 
 const PartDetails = React.lazy(() => import("./pages/PartDetails/PartDetails"));
 const Notification = React.lazy(() => import("./components/UI/Notification"));
@@ -23,7 +23,6 @@ const App = (props) => {
   const cart = useSelector((state) => state.cart);
 
   const showCart = useSelector((state) => state.ui.cartIsVisible);
-  const showUser = useSelector((state) => state.ui.userIsVisible);
   const notification = useSelector((state) => state.ui.notification);
 
   useEffect(() => {
@@ -54,10 +53,6 @@ const App = (props) => {
     dispatch(uiActions.userToggle());
   };
 
-  const userFormCloseHandler = () => {
-    dispatch(uiActions.userToggle());
-  };
-
   const closeHandler = () => {
     isShowNotification(false);
   };
@@ -80,17 +75,22 @@ const App = (props) => {
       )}
       <div className={classes.app}>
         {showCart && <Cart onClose={cartCloseHandler} />}
-        {showUser && <User onClose={userFormCloseHandler} />}
+
         <Contacts />
         <Header
           onShowCart={cartShownHandler}
           onShowUser={userFormShowHandler}
         />
-        <AddParts/>
         <main>
           <Switch>
+            <Route path="/user">
+              <User />
+            </Route>
             <Route path="/partdetails/:partId">
               <PartDetails />
+            </Route>
+            <Route path="/admin/addnewpart">
+              <AddNewParts />
             </Route>
             <Route path="/">
               <Parts />

@@ -8,7 +8,7 @@
   padding-left: auto;
 }
 
-@media (width: 320px) {
+/* @media (width: 320px) {
   .card {
     width: 8.1rem;
     height: 17rem;
@@ -29,5 +29,12 @@
     width: 10rem;
     height: 17rem;
     padding-bottom: 0.5rem;
+  }
+} */
+
+@media (max-width: 425px) {
+  .card {
+    max-width: 10rem;
+    max-height: 17rem;
   }
 }

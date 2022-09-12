@@ -79,6 +79,8 @@ const AvailableParts = (props) => {
   //   );
   // }
 
+
+
   const partList = sortedParts.map((parts) => (
     <PartItems
       key={parts.id}

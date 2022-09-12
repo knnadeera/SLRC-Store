@@ -3,6 +3,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
 import classes from "./HeaderCartButton.module.css";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const HeaderCartButton = (props) => {
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
@@ -40,9 +41,11 @@ const HeaderCartButton = (props) => {
           <span className={classes.badge}>{totalPriceOfCartItems}</span>
         </div>
       </button>
-      <button className={classes["user-button"]} onClick={props.onShowUser}>
-        <BiUserCircle className={classes.user_icon} />
-      </button>
+      <Link to="/user">
+        <button className={classes["user-button"]} onClick={props.onShowUser}>
+          <BiUserCircle className={classes.user_icon} />
+        </button>
+      </Link>
     </div>
   );
 };

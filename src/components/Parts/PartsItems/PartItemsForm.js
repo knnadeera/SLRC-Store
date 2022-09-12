@@ -1,11 +1,10 @@
-import React, { useRef, useState } from "react";
-import Input from "../../UI/Input";
+import React, { useRef} from "react";
+import { NavLink } from "react-router-dom";
 import classes from "./PartItemsForm.module.css";
 
 const PartItemsForm = (props) => {
-  const [amountIsValid, setAmountIsValid] = useState(true)
+  // const [amountIsValid, setAmountIsValid] = useState(true);
   const amountInputRef = useRef();
-  
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -18,15 +17,15 @@ const PartItemsForm = (props) => {
       enteredAmountNumber < 1 ||
       enteredAmountNumber > 5
     ) {
-      setAmountIsValid(false)
+      // setAmountIsValid(false);
       return;
     }
-    props.onAddToCart(enteredAmountNumber)
+    props.onAddToCart(enteredAmountNumber);
   };
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
-      <Input
+      {/* <Input
         ref={amountInputRef}
         input={{
           id: "amount",
@@ -36,9 +35,12 @@ const PartItemsForm = (props) => {
           step: "1",
           defaultValue: "1",
         }}
-      />
+      /> */}
+      <NavLink to={`/partdetails/${props.id}`}>
+        <button>More Details</button>
+      </NavLink>
       <button>Add to Cart</button>
-      {!amountIsValid && <p>Please enter valid amount</p>}
+      {/* {!amountIsValid && <p>Please enter valid amount</p>} */}
     </form>
   );
 };

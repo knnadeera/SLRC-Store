@@ -120,6 +120,10 @@
 } */
 
 @media (max-width: 425px) {
+  .rap {
+    margin: 1rem;
+  }
+
   .part {
     display: grid;
     margin: 0%;
@@ -128,7 +132,7 @@
   .img {
     width: 55;
     height: 55;
-    margin-left: -1rem;
+    margin-left: -0.5rem;
   }
   .part h3 {
     font-size: 85%;
@@ -149,6 +153,7 @@
     margin-top: -18%;
   }
   .border {
-    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
   }
 }

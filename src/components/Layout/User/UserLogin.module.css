@@ -1,8 +1,19 @@
+.login{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 80px 0 rgba(0, 0, 0, 0.25);
+  max-height: 20rem;
+}
+
+.login h1{
+  margin-left: 1.5rem;
+}
+
 .input {
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 1rem;
   width: 90%;
-  max-width: 40rem;
 }
 
 .input label {
@@ -36,7 +47,6 @@
   border: 1px solid #fcb900;
   padding: 0.5rem 2rem;
   border-radius: 25px;
-  margin-left: 1rem;
 }
 
 .actions button:hover,

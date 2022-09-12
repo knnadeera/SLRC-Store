@@ -45,7 +45,6 @@ const PartItems = (props) => {
         </NavLink>
 
         <div className={classes.border}>
-          {/* <input label='a' ref={a} /> */}
           <PartItemsForm onAddToCart={addToCartHandler} />
         </div>
       </Card>

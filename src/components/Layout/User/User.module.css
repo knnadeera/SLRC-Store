@@ -1,0 +1,13 @@
+
+.user div{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+@media (max-width: 690px) {
+    .user div {
+      display: flex;
+      flex-direction: column;
+    }
+  }

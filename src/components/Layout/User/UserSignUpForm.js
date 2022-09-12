@@ -1,10 +1,10 @@
 import React from "react";
-import Modal from "../../UI/Modal";
 import classes from "./UserSignUpForm.module.css";
 
 const UserForm = (props) => {
   return (
-    <Modal onClose={props.onClose}>
+    <div className={classes.user_form}>
+      <h1>Register</h1>
       <form className={classes.input}>
         <label htmlFor="username">UserName:</label>
         <input type="text" id="username"></input>
@@ -16,10 +16,16 @@ const UserForm = (props) => {
         <input type="password"></input>
         <label htmlFor="address">Address</label>
         <input type="text"></input>
-        <label htmlFor="city">City</label>
-        <input type="text"></input>
-        <label htmlFor="postal">Postal Code</label>
-        <input type="number"></input>
+        <section className={classes.citydata}>
+          <section className={classes.city}>
+            <label htmlFor="city">City</label>
+            <input type="text"></input>
+          </section>
+          <section className={classes.postal}>
+            <label htmlFor="postal">Postal Code</label>
+            <input type="number"></input>
+          </section>
+        </section>
         <label htmlFor="country">Country</label>
         <select id="country" name="country">
           <option>select country</option>
@@ -280,17 +286,11 @@ const UserForm = (props) => {
         </select>
       </form>
       <div className={classes.actions}>
-        <button
-          type="button"
-          onClick={props.onClose}
-        >
-          Close
-        </button>
         <button className={classes.button} type="submit">
           Sign Up
         </button>
       </div>
-    </Modal>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { Fragment, useRef, useState } from "react";
-// import SpecInputs from "./SpecInputs";
+import classes from "./AddNewPartForm.module.css";
 
 const AddNewPartForm = (props) => {
   const [specInputs, setSpecInputs] = useState([{ spec: "" }]);
@@ -25,7 +25,7 @@ const AddNewPartForm = (props) => {
       price: price,
       description: enteredDescription,
       fullDescription: enteredFullDescription,
-      specification: { specInputs },
+      specifications: { specInputs },
       includes: { includeInputs },
     });
   };
@@ -34,14 +34,12 @@ const AddNewPartForm = (props) => {
     const values = [...specInputs];
     values[index] = event.target.value;
     setSpecInputs(values);
-    console.log(index);
   };
 
   const includeChangeHandler = (index, event) => {
     const values = [...includeInputs];
     values[index] = event.target.value;
     setIncludeInputs(values);
-    console.log(index);
   };
 
   const specAddHandler = () => {
@@ -52,45 +50,53 @@ const AddNewPartForm = (props) => {
     setIncludeInputs([...includeInputs, { include: "" }]);
   };
 
+  const spec = specInputs.map((specInputField, index) => (
+    <div key={index} className={classes.add}>
+      <input
+        value={specInputField.value}
+        onChange={(event) => specChangeHandler(index, event)}
+      />
+      <button onClick={specAddHandler}>Add Spec</button>
+    </div>
+  ));
+
+  const incld = includeInputs.map((includeInputField, index) => (
+    <div key={index} className={classes.add}>
+      <input
+        value={includeInputField.value}
+        onChange={(event) => includeChangeHandler(index, event)}
+      />
+      <button onClick={includeAddHandler}>Add Include</button>
+    </div>
+  ));
+
   return (
     <Fragment>
-      <section>
-        <label htmlFor="Name">Name</label>
-        <input type="text" ref={nameInputRef}></input>
-        <label htmlFor="Image">Image</label>
-        <input type="url" ref={imgInputRef} />
-        <label htmlFor="Price">Price</label>
-        <input type="number" ref={priceInputRef}></input>
-        <label htmlFor="Description">Description</label>
-        <textarea type="text" ref={descriptionInputRef} />
-        <label htmlFor="Full Description">Full Description</label>
-        <textarea type="text" ref={fullDescriptionInputRef} />
-      </section>
-      <div>
-        <h4>Specifications</h4>
-        {specInputs.map((specInputField, index) => (
-          <div key={index}>
-            <input
-              value={specInputField.value}
-              onChange={(event) => specChangeHandler(index, event)}
-            />
-            <button onClick={specAddHandler}>Add Spec</button>
+      <div className={classes.new_part}>
+        <section className={classes.main}>
+          <label htmlFor="Name">Name</label>
+          <input type="text" ref={nameInputRef}></input>
+          <label htmlFor="Image">Image</label>
+          <input type="url" ref={imgInputRef} />
+          <label htmlFor="Price">Price</label>
+          <input type="number" ref={priceInputRef}></input>
+          <label htmlFor="Description">Description</label>
+          <textarea type="text" ref={descriptionInputRef} />
+          <label htmlFor="Full Description">Full Description</label>
+          <textarea type="text" ref={fullDescriptionInputRef} />
+        </section>
+        <section>
+          <div>
+            <label>Specifications</label>
+            {spec}
           </div>
-        ))}
-      </div>
-      <div>
-        <h4>Includes</h4>
-        {includeInputs.map((includeInputField, index) => (
-          <div key={index}>
-            <input
-              value={includeInputField.value}
-              onChange={(event) => includeChangeHandler(index, event)}
-            />
-            <button onClick={includeAddHandler}>Add Include</button>
+          <div>
+            <label>Includes</label>
+            {incld}
           </div>
-        ))}
+        </section>
+        <button onClick={submitHandler} className={classes.post}>Post</button>
       </div>
-      <button onClick={submitHandler}>Post</button>
     </Fragment>
   );
 };

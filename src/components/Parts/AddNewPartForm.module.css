@@ -1,0 +1,55 @@
+.new_part {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.new_part section {
+  margin: 0.23em 2rem;
+  font-weight: bold;
+}
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.main label {
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.add {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.add button {
+  font-weight: bold;
+  cursor: pointer;
+  max-height: 2.5rem;
+  max-width: 10rem;
+  background-color: transparent;
+  border: 1px solid #fcb900;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin: 0.1rem 1rem;
+  align-self: flex-end;
+}
+
+.post {
+  font-weight: bold;
+  cursor: pointer;
+  max-height: 2.5rem;
+  max-width: 10rem;
+  background-color: transparent;
+  border: 1px solid #fcb900;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin: 0.1rem 1rem;
+  background-color: #fcb900;
+  align-self: flex-end;
+}
