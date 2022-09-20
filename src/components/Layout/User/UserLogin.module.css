@@ -3,7 +3,14 @@
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 0 80px 0 rgba(0, 0, 0, 0.25);
-  max-height: 20rem;
+  max-height: 40rem;
+  width: 50rem;
+}
+
+.login p{
+  cursor: pointer;
+  color: #fcb900;
+  text-align: center;
 }
 
 .login h1{
@@ -84,4 +91,11 @@
 .sgnbutton {
   background-color: #fcb900;
   color: black;
+}
+
+@media (max-width: 700px) {
+  .login{
+    
+    width: inherit;
+  }
 }

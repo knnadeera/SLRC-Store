@@ -56,7 +56,7 @@ const AddNewPartForm = (props) => {
         value={specInputField.value}
         onChange={(event) => specChangeHandler(index, event)}
       />
-      <button onClick={specAddHandler}>Add Spec</button>
+      
     </div>
   ));
 
@@ -66,7 +66,7 @@ const AddNewPartForm = (props) => {
         value={includeInputField.value}
         onChange={(event) => includeChangeHandler(index, event)}
       />
-      <button onClick={includeAddHandler}>Add Include</button>
+      
     </div>
   ));
 
@@ -85,14 +85,16 @@ const AddNewPartForm = (props) => {
           <label htmlFor="Full Description">Full Description</label>
           <textarea type="text" ref={fullDescriptionInputRef} />
         </section>
-        <section>
+        <section className={classes.added}>
           <div>
             <label>Specifications</label>
             {spec}
+            <button onClick={specAddHandler}>Add Spec</button>
           </div>
           <div>
             <label>Includes</label>
             {incld}
+            <button onClick={includeAddHandler}>Add Include</button>
           </div>
         </section>
         <button onClick={submitHandler} className={classes.post}>Post</button>

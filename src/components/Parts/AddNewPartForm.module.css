@@ -25,9 +25,10 @@
   display: flex;
   flex-direction: column;
   max-width: 100%;
+  margin: .5rem 0
 }
 
-.add button {
+.added button {
   font-weight: bold;
   cursor: pointer;
   max-height: 2.5rem;
@@ -36,8 +37,7 @@
   border: 1px solid #fcb900;
   padding: 0.5rem 2rem;
   border-radius: 25px;
-  margin: 0.1rem 1rem;
-  align-self: flex-end;
+  margin: 0.1rem 1rem; 
 }
 
 .post {

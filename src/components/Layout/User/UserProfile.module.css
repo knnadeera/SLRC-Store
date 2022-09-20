@@ -1,0 +1,16 @@
+.user_profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  color: #fcb900;
+}
+
+.user_profile a{
+  color: #fcb900;
+  cursor: pointer;
+  text-decoration: none;
+}

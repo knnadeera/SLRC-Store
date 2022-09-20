@@ -8,20 +8,12 @@ const SiteTitle = (props) => {
   return (
     <div className={classes["site-title"]}>
       <h1 className={classes["site-title__h1"]}>
-        {/* <a
-          href="https://knnadeera.github.io/SLRC-Store/"
-          // target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={slrclogo} alt="logo" className={classes.slrclogo} />
-          SL RC Store
-        </a> */}
+        <img src={slrclogo} alt="logo" className={classes.slrclogo} />
         <NavLink
           to="/"
           // target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={slrclogo} alt="logo" className={classes.slrclogo} />
           SL RC Store
         </NavLink>
       </h1>

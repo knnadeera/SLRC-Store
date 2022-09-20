@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useRef } from "react";
 import classes from "./UserSignUpForm.module.css";
 
-const UserForm = (props) => {
+const UserSignUpForm = (props) => {
+  const emailInputRef = useRef();
+  const passwordInputRef = useRef();
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const enteredEmail = emailInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
+
+    fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAaISA5Vy4eneIF0K23yVeOnn9_m95dMfQ",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: enteredEmail,
+          password: enteredPassword,
+          returnSecureToken: true,
+        }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+  };
+
   return (
-    <div className={classes.user_form}>
+    <form className={classes.user_form} onSubmit={submitHandler}>
       <h1>Register</h1>
       <form className={classes.input}>
         <label htmlFor="username">UserName:</label>
         <input type="text" id="username"></input>
         <label htmlFor="email">E-mail:</label>
-        <input type="email"></input>
+        <input type="email" ref={emailInputRef}></input>
         <label htmlFor="tel">Mobile No:</label>
         <input type="number" min="10"></input>
         <label htmlFor="password">Password:</label>
-        <input type="password"></input>
+        <input type="password" ref={passwordInputRef}></input>
         <label htmlFor="address">Address</label>
         <input type="text"></input>
         <section className={classes.citydata}>
@@ -290,8 +313,13 @@ const UserForm = (props) => {
           Sign Up
         </button>
       </div>
-    </div>
+      <p onClick={props.onLogin}>
+        Returning Customer.
+        <br />
+        Want to Login...!
+      </p>
+    </form>
   );
 };
 
-export default UserForm;
+export default UserSignUpForm;

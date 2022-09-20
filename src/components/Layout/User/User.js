@@ -1,16 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import UserLogin from "./UserLogin";
-import UserForm from "./UserSignUpForm";
+import UserSignUpForm from "./UserSignUpForm";
 import classes from "./User.module.css";
+// import UserProfile from "./UserProfile";
 
 const User = (props) => {
+  const [isLogin, setIsLogin] = useState(true);
+
+  const switchAuthModeHandler = () => {
+    setIsLogin((prevState) => !prevState);
+  };
+
   return (
     <div className={classes.user}>
-      <Link to="/admin/addnewpart">Add New Part</Link>
-      <div >
-        <UserLogin />
-        <UserForm />
+      {/* <UserProfile /> */}
+      <div>
+        {isLogin && <UserLogin onSignUp={switchAuthModeHandler} />}
+        {!isLogin && <UserSignUpForm onLogin={switchAuthModeHandler} />}
       </div>
     </div>
   );
