@@ -32,7 +32,7 @@
   }
 } */
 
-@media (max-width: 425px) {
+@media (max-width: 630px) {
   .card {
     max-width: 10rem;
     max-height: 17rem;

@@ -5,7 +5,9 @@ export const fetchCartData = () => {
   return async (dispatch) => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://sl-rc-store-default-rtdb.asia-southeast1.firebasedatabase.app/cart.json"
+        `https://sl-rc-store-default-rtdb.asia-southeast1.firebasedatabase.app/cart/${localStorage.getItem(
+          "localId"
+        )}.json`
       );
 
       if (!response.ok) {
@@ -49,7 +51,9 @@ export const sendCartData = (cart) => {
 
     const sendRequest = async () => {
       const response = await fetch(
-        "https://sl-rc-store-default-rtdb.asia-southeast1.firebasedatabase.app/cart.json",
+        `https://sl-rc-store-default-rtdb.asia-southeast1.firebasedatabase.app/cart/${localStorage.getItem(
+          "localId"
+        )}.json`,
         {
           method: "PUT",
           body: JSON.stringify({

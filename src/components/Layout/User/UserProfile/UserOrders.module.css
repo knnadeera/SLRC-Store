@@ -1,0 +1,4 @@
+.order_rap{
+    display: flex;
+    flex-direction: column;
+}

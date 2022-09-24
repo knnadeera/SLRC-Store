@@ -1,10 +1,11 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import classes from "./SideCart.module.css";
 import SideCartItem from "./SideCartItem";
 import Checkout from "./Checkout";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart-slice";
 import Modal from "../UI/Modal";
+import AuthContext from "../../Store/auth-context";
 
 const SideCart = (props) => {
   const [isProceed, setIsProceed] = useState(false);
@@ -14,6 +15,8 @@ const SideCart = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
   const totalQty = useSelector((state) => state.cart.totalQty);
+
+  const authCtx = useContext(AuthContext);
 
   const dispatch = useDispatch();
 
@@ -32,7 +35,7 @@ const SideCart = (props) => {
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
-      "https://sl-rc-store-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json",
+      `https://sl-rc-store-default-rtdb.asia-southeast1.firebasedatabase.app/orders/${authCtx.localId}.json`,
       {
         method: "POST",
         body: JSON.stringify({

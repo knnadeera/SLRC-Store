@@ -1,8 +1,9 @@
-import React, { Fragment,useEffect } from "react";
+import React, { useEffect } from "react";
 import AvailableParts from "./AvailableParts";
 import useHttp from "../../hooks/use-http";
 import { getAllParts } from "../../lib/api";
 import LoadingSpinner from "../UI/LoadingSpinner";
+import classes from './Parts.module.css'
 
 const Parts = (props) => {
   const {
@@ -29,9 +30,9 @@ const Parts = (props) => {
   }
 
   return (
-    <Fragment>
+    <div className={classes.all_parts}>
       <AvailableParts parts={loadedParts} />
-    </Fragment>
+    </div>
   );
 };
 

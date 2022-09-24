@@ -1,7 +1,7 @@
 .parts {
   max-width: 70rem;
   width: 100%;
-  margin: 2rem auto;
+  margin-top: 2rem;
   animation: parts-appear 1s ease-out forwards;
   display: flex;
   flex-direction: row;
@@ -25,19 +25,20 @@
   color: red;
 }
 
-.sorting{
+.sorting {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
 }
 
-.sorting h4{
+.sorting h4 {
   color: #fcb900;
   margin: 1rem 3rem;
   cursor: pointer;
+
 }
 
-.sorting button{
+.sorting button {
   font: inherit;
   cursor: pointer;
   background-color: #fcb900;
@@ -48,6 +49,7 @@
   border-radius: 15px;
   font-weight: bold;
   margin: 1rem 3rem;
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.25);
 }
 
 @keyframes parts-appear {
@@ -61,8 +63,14 @@
     transform: translateY(0);
   }
 }
+@media (max-width: 530px) {
+  .sorting {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
-@media (max-width: 425px){
+@media (max-width: 630px) {
   .parts {
     padding: 0;
     max-width: 100%;
@@ -72,12 +80,30 @@
     display: flex;
     flex-direction: row;
   }
-  
+
   .parts ul {
     max-width: 100%;
     margin: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .sorting h4 {
+    color: #fcb900;
+    margin: 1rem 3rem;
+    cursor: pointer;
+    font-size: small;
+  }
+
+  .sorting button {
+    font-size: small;
+    padding: 0.2rem 0.2rem;
+  }
+}
+
+@media (min-width: 630px) {
+  .sorting {
+    display: flex;
+    flex-direction: row-reverse;
   }
 }

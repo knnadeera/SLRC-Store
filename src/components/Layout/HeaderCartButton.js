@@ -17,6 +17,7 @@ const HeaderCartButton = (props) => {
     btnIsHighlighted ? classes.bump : ""
   }`;
 
+
   useEffect(() => {
     if (items.length === 0) {
       return;

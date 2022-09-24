@@ -1,23 +1,29 @@
-import React, { useRef } from "react";
+import React, { useContext } from "react";
 import Card from "../../UI/Card";
 import classes from "./PartItems.module.css";
 import PartItemsForm from "./PartItemsForm";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../Store/cart-slice";
 import { NavLink } from "react-router-dom";
+import AuthContext from "../../../Store/auth-context";
 
 const PartItems = (props) => {
   const dispatch = useDispatch();
-  const a = useRef();
+
+  const authCtx = useContext(AuthContext);
 
   const { id, img, name, description, price } = props;
 
   const itemPrice = `$${price.toFixed(2)}`;
 
   const addToCartHandler = () => {
-    dispatch(
-      cartActions.addItemToCart({ id, img, name, description, price, a })
-    );
+    if (!authCtx.isLoggedIn) {
+      return alert("Please signin before add item to cart ");
+    } else {
+      dispatch(
+        cartActions.addItemToCart({ id, img, name, description, price })
+      );
+    }
   };
 
   return (

@@ -1,26 +1,26 @@
-import React, { useRef} from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./PartItemsForm.module.css";
 
 const PartItemsForm = (props) => {
   // const [amountIsValid, setAmountIsValid] = useState(true);
-  const amountInputRef = useRef();
+  // const amountInputRef = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const enteredAmount = amountInputRef.current.value;
-    const enteredAmountNumber = +enteredAmount;
+    // const enteredAmount = amountInputRef.current.value;
+    // const enteredAmountNumber = +enteredAmount;
 
-    if (
-      enteredAmount.trim().length === 0 ||
-      enteredAmountNumber < 1 ||
-      enteredAmountNumber > 5
-    ) {
-      // setAmountIsValid(false);
-      return;
-    }
-    props.onAddToCart(enteredAmountNumber);
+    // if (
+    //   enteredAmount.trim().length === 0 ||
+    //   enteredAmountNumber < 1 ||
+    //   enteredAmountNumber > 5
+    // ) {
+    //   // setAmountIsValid(false);
+    //   return;
+    // }
+    props.onAddToCart();
   };
 
   return (

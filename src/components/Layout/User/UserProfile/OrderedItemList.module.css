@@ -1,0 +1,10 @@
+.orderedItemList{
+    color: #fcb900;
+    border-bottom: 1px solid #fcb900;
+}
+
+.orderedItemBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

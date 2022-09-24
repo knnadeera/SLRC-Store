@@ -88,7 +88,7 @@
   border-bottom: 3px solid #fcb900;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .part_details_layout {
     display: flex;
     flex-direction: column;

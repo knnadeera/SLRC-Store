@@ -1,0 +1,14 @@
+.details{
+    display: flex;
+    flex-direction: column;
+}
+
+.details section{
+    display: flex;
+    flex-direction: row;
+}
+
+.details label{
+    font-weight: bold;
+    color: #fcb900;
+}

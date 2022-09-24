@@ -4,7 +4,7 @@
   align-items: center;
   border-bottom: 2px solid #fcb900;
   padding: 1rem 0;
-  margin: 1rem 0;
+  margin: 1rem -1.5rem;
   width: 100%;
 }
 
@@ -70,12 +70,6 @@
   flex-direction: column;
 }
 
-@media (max-width: 768px) {
-  .actions {
-    flex-direction: row;
-  }
-}
-
 .cart-item button {
   font: inherit;
   font-weight: bold;
@@ -95,4 +89,35 @@
 .cart-item button:active {
   background-color: #fcb900;
   color: white;
+}
+
+@media (max-width: 530px) {
+  .cart-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .total {
+    margin-left: 0rem;
+  }
+
+  .summary{
+    margin-left: 1rem;
+  }
+
+  .actions {
+    margin-left: 0rem;
+    margin-top: 1rem;
+  }
+
+  .cart-item h2 {
+    margin-left: 0rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: row;
+  }
 }

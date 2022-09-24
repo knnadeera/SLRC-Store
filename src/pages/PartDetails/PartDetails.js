@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
 import { getIncludes, getSinglePart } from "../../lib/api";
@@ -9,6 +9,7 @@ import SideCart from "../../components/Cart/SideCart";
 import LoadingSpinner from "../../components/UI/LoadingSpinner";
 import Includes from "./Inludes";
 import Specs from "./Specs";
+import AuthContext from "../../Store/auth-context";
 
 const Reviews = React.lazy(() => import("../Reviews/Reviews"));
 
@@ -18,6 +19,8 @@ const PartDetails = (props) => {
   const params = useParams();
   const dispatch = useDispatch();
   const { partId } = params;
+
+  const authCtx = useContext(AuthContext);
 
   const { sendRequest, data: loadedPart } = useHttp(
     getSinglePart,
@@ -38,15 +41,19 @@ const PartDetails = (props) => {
   }
 
   const addToCartHandler = () => {
-    dispatch(
-      cartActions.addItemToCart({
-        id: loadedPart.id,
-        img: loadedPart.img,
-        name: loadedPart.name,
-        description: loadedPart.description,
-        price: loadedPart.price,
-      })
-    );
+    if (!authCtx.isLoggedIn) {
+      return alert("Please signin before add item to cart ");
+    } else {
+      dispatch(
+        cartActions.addItemToCart({
+          id: loadedPart.id,
+          img: loadedPart.img,
+          name: loadedPart.name,
+          description: loadedPart.description,
+          price: loadedPart.price,
+        })
+      );
+    }
   };
   const itemPrice = `$${loadedPart.price.toFixed(2)}`;
 

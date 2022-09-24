@@ -19,7 +19,6 @@ export async function getAllParts() {
 
     transformedParts.push(partObj);
   }
-
   return transformedParts;
 }
 
@@ -49,7 +48,10 @@ export async function getIncludes(partId) {
     throw new Error(data.message || "Could not fetch part.");
   }
 
-  const loadedIncludes =  [...data];
+  const loadedIncludes = [...data];
+
+  console.log("agde", data)
+  
   return loadedIncludes;
 }
 
@@ -63,7 +65,7 @@ export async function getSpecs(partId) {
     throw new Error(data.message || "Could not fetch part.");
   }
 
-  const loadedSpecs =  [...data];
+  const loadedSpecs = [...data];
   return loadedSpecs;
 }
 
@@ -126,3 +128,4 @@ export async function getAllReviews(partId) {
 
   return transformedReviews;
 }
+

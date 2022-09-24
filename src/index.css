@@ -9,6 +9,9 @@ html {
 body {
   margin: 0 6%;
   background-color: #3f3f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .centered {
@@ -17,4 +20,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1160px) {
+  .body {
+    max-width: 780px;
+  }
+}
+
+@media (max-width: 900px) {
+  .body {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 630px) {
+  .body {
+    max-width: 465px;
+  }
+}
+
+@media (max-width: 530px) {
+  .body {
+    max-width: 270px;
+  }
+}
+
+@media (min-width: 1162px) {
+  .body {
+    width: 1024px;
+  }
 }

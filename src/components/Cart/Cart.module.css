@@ -1,47 +1,54 @@
 .cart_items {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    max-height: 30rem;
-    overflow: auto;
-  }
-  
-  .total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: #fcb900;
-  }
-  
-  .actions {
-    text-align: right;
-  }
-  
-  .actions button {
-    font: inherit;
-    cursor: pointer;
-    background-color: transparent;
-    border: 1px solid #fcb900;
-    padding: 0.5rem 2rem;
-    border-radius: 25px;
-    margin-left: 1rem;
-  }
-  
-  .actions button:hover,
-  .actions button:active {
-    color: black;
-    transition: .2s;
-    transform: scale(1.1);
-  } 
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 30rem;
+  overflow: auto;
+}
 
-  .actions .button {
-    background-color: #fcb900;
-    color: black
-  }
-  .checkout{
-    display: flex;
-    flex-direction: column;
-  }
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #fcb900;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions a {
+  color: #fcb900;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.actions button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fcb900;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+
+.actions button:hover,
+.actions button:active {
+  color: black;
+  transition: 0.2s;
+  transform: scale(1.1);
+}
+
+.actions .button {
+  background-color: #fcb900;
+  color: black;
+}
+.checkout {
+  display: flex;
+  flex-direction: column;
+}
+

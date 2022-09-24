@@ -1,10 +1,12 @@
-import React, { Fragment, Suspense, useState } from "react";
+import React, { Fragment, Suspense, useContext, useState } from "react";
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
 import { useSelector, useDispatch } from "react-redux";
 import { cartActions } from "../../Store/cart-slice";
 import LoadingSpinner from "../UI/LoadingSpinner";
+import AuthContext from "../../Store/auth-context";
+import { Link } from "react-router-dom";
 
 const Checkout = React.lazy(() => import("./Checkout"));
 
@@ -16,6 +18,8 @@ const Cart = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
   const totalQty = useSelector((state) => state.cart.totalQty);
+
+  const authCtx = useContext(AuthContext);
 
   const dispatch = useDispatch();
 
@@ -30,7 +34,7 @@ const Cart = (props) => {
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
-      "https://sl-rc-store-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json",
+      `https://sl-rc-store-default-rtdb.asia-southeast1.firebasedatabase.app/orders/${localStorage.localId}.json`,
       {
         method: "POST",
         body: JSON.stringify({
@@ -77,8 +81,9 @@ const Cart = (props) => {
             <span>{cartTotalPrice}</span>
           </div>
           <div className={classes.actions}>
+            {!authCtx.isLoggedIn&&<Link to='/user' onClick={props.onClose}>Please Login to Proceed</Link>}
             <button onClick={props.onClose}>Close</button>
-            {hasItems && (
+            {hasItems && authCtx.isLoggedIn && (
               <button className={classes.button} onClick={ProceedHandler}>
                 Proceed to checkout
               </button>

@@ -43,6 +43,7 @@ const App = (props) => {
 
   const cartShownHandler = () => {
     dispatch(uiActions.cartToggle());
+    dispatch(fetchCartData());
   };
 
   const cartCloseHandler = () => {
