@@ -81,7 +81,7 @@ const AddNewPartForm = (props) => {
           <label htmlFor="Price">Price</label>
           <input type="number" ref={priceInputRef}></input>
           <label htmlFor="Description">Description</label>
-          <textarea type="text" ref={descriptionInputRef} />
+          <textarea type="text" ref={descriptionInputRef} maxLength='42'/>
           <label htmlFor="Full Description">Full Description</label>
           <textarea type="text" ref={fullDescriptionInputRef} />
         </section>

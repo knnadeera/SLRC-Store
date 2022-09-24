@@ -16,7 +16,6 @@
   padding: 0.25rem 0.5rem;
   border-radius: 15px;
   font-weight: bold;
-  margin: 0.1rem;
   max-width: 7rem;
 }
 
@@ -38,7 +37,7 @@
   .form button {
     max-width: 5rem;
     font-size: 70%;
-    margin: .1rem 0 0 0;
+    margin: 2rem 0 0 0;
     font: center;
     font-weight: normal;
   }

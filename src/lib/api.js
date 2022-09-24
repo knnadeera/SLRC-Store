@@ -49,8 +49,6 @@ export async function getIncludes(partId) {
   }
 
   const loadedIncludes = [...data];
-
-  console.log("agde", data)
   
   return loadedIncludes;
 }

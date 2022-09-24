@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import classes from "./PartItemsForm.module.css";
 
 const PartItemsForm = (props) => {
@@ -36,9 +35,7 @@ const PartItemsForm = (props) => {
           defaultValue: "1",
         }}
       /> */}
-      <NavLink to={`/partdetails/${props.id}`}>
-        <button>More Details</button>
-      </NavLink>
+      
       <button>Add to Cart</button>
       {/* {!amountIsValid && <p>Please enter valid amount</p>} */}
     </form>

@@ -23,7 +23,6 @@ const UserProfile = (props) => {
       const resData = await res.json();
 
       const loadedAccountDetails = [];
-      console.log('details',resData)
 
       for (const key in resData) {
         loadedAccountDetails.push({

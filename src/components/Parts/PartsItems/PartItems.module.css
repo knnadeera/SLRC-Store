@@ -10,7 +10,7 @@
 
 .part {
   margin: 1rem 1.5rem 1rem 1.5rem;
-  width: 10rem;
+  width: 10.7rem;
   height: 17rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #ccc;
@@ -18,6 +18,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center; 
+  justify-items: center;
 }
 
 .img {
@@ -41,6 +43,7 @@
 .description {
   font-style: italic;
   text-align: center;
+  margin-top: -1rem;
 }
 
 .price {
@@ -48,6 +51,17 @@
   color: #ff6900;
   font-size: 1.25rem;
   text-align: center;
+}
+
+.part button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #fcb900;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+  max-width: 7rem;
 }
 
 /* @media (width: 320px) {
@@ -128,11 +142,13 @@
     display: grid;
     margin: 0%;
     border-bottom: none;
+    align-items: center;
+    justify-items: center;
   }
   .img {
     width: 55;
     height: 55;
-    margin-left: -0.5rem;
+    margin-top: -1.5rem;
   }
   .part h3 {
     font-size: 85%;
@@ -155,5 +171,12 @@
   .border {
     display: flex;
     justify-content: center;
+  }
+  .part button {
+    max-width: 5rem;
+    font-size: 70%;
+    font: center;
+    font-weight: normal;
+    margin: -4rem 0rem 0rem 0rem;
   }
 }

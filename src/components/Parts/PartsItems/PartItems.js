@@ -31,7 +31,6 @@ const PartItems = (props) => {
       <Card>
         <NavLink
           to={`/partdetails/${props.id}`}
-          activeClassName={classes.navlink}
         >
           <div className={classes.part}>
             <div className={classes.img_dev}>
@@ -47,6 +46,7 @@ const PartItems = (props) => {
             <h3>{name}</h3>
             <div className={classes.description}>{description}</div>
             <div className={classes.price}>{itemPrice}</div>
+            <button>More Details</button>
           </div>
         </NavLink>
 
