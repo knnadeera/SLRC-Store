@@ -48,12 +48,12 @@ self.__precacheManifest = [
     "url": "/SLRC-Store/static/js/5.ccead181.chunk.js"
   },
   {
-    "revision": "37272919be39724f5676",
-    "url": "/SLRC-Store/static/css/6.a913bea5.chunk.css"
+    "revision": "b4b2e65f8aa50af34085",
+    "url": "/SLRC-Store/static/css/6.0f7df616.chunk.css"
   },
   {
-    "revision": "37272919be39724f5676",
-    "url": "/SLRC-Store/static/js/6.37272919.chunk.js"
+    "revision": "b4b2e65f8aa50af34085",
+    "url": "/SLRC-Store/static/js/6.b4b2e65f.chunk.js"
   },
   {
     "revision": "e7f09933ec6a72633f10",
@@ -76,11 +76,11 @@ self.__precacheManifest = [
     "url": "/SLRC-Store/static/js/9.34a35208.chunk.js"
   },
   {
-    "revision": "5d96df0b6a7c28490afa",
-    "url": "/SLRC-Store/static/js/runtime~main.5d96df0b.js"
+    "revision": "4ba6ee5a49fcc15c7065",
+    "url": "/SLRC-Store/static/js/runtime~main.4ba6ee5a.js"
   },
   {
-    "revision": "9388516dbafeb65aed3b4db8e94f5af6",
+    "revision": "1d1c1fa12d8d067adade06c719a19f7a",
     "url": "/SLRC-Store/index.html"
   }
 ];
