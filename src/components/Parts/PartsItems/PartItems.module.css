@@ -1,5 +1,5 @@
 .rap {
-  margin: 1.5% 5px;
+  margin: .5rem;
   cursor: pointer;
 }
 
@@ -135,11 +135,10 @@
 
 @media (max-width: 630px) {
   .rap {
-    margin: 1rem;
+    margin: .8rem;
   }
 
-  .part {
-    display: grid;
+  .part { 
     margin: 0%;
     border-bottom: none;
     align-items: center;
@@ -148,25 +147,25 @@
   .img {
     width: 55;
     height: 55;
-    margin-top: -1.5rem;
+    margin-top: -1rem;
   }
   .part h3 {
     font-size: 85%;
     max-width: 75%;
     max-height: 1px;
-    margin-top: -22%;
+    margin-top: -6rem;
   }
   .description {
     font-size: 80%;
     max-width: 90%;
     max-height: 1px;
-    margin-top: -22%;
+    margin-top: -6rem;
   }
   .price {
     font-size: 75%;
     max-width: 75%;
     max-height: 1px;
-    margin-top: -28%;
+    margin-top: -5rem;
   }
   .border {
     display: flex;
@@ -175,8 +174,8 @@
   .part button {
     max-width: 5rem;
     font-size: 70%;
-    font: center;
     font-weight: normal;
-    margin: -4rem 0rem 0rem 0rem;
+    margin-top: -6rem ;
+    margin-bottom: 3rem;
   }
 }

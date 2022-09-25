@@ -18,12 +18,19 @@ const Parts = React.lazy(() => import("./components/Parts/Parts"));
 let isInitial = true;
 
 const App = (props) => {
+  const [isAdmin, setIsAdmin] = useState(false);
   const [showNotification, isShowNotification] = useState(false);
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
   const showCart = useSelector((state) => state.ui.cartIsVisible);
   const notification = useSelector((state) => state.ui.notification);
+
+  useEffect(() => {
+    if (localStorage.localId === "nHb0gAendUVUbs66zSYiS7CAirk1") {
+      setIsAdmin(true);
+    }
+  },[]);
 
   useEffect(() => {
     dispatch(fetchCartData());
@@ -90,9 +97,11 @@ const App = (props) => {
             <Route path="/partdetails/:partId">
               <PartDetails />
             </Route>
-            <Route path="/admin/addnewpart">
-              <AddNewParts />
-            </Route>
+            {isAdmin && (
+              <Route path="/admin/addnewpart">
+                <AddNewParts />
+              </Route>
+            )}
             <Route path="/">
               <Parts />
             </Route>

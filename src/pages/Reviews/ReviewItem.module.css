@@ -1,7 +1,21 @@
 .item {
   margin: 1rem 0;
-  color: #4a5555;
   font-size: 1.25rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #fcb900;;
+  border-bottom: 2px solid #fcb900;
+}
+
+.review_head {
+  color: #fcb900;
+  display: flex;
+  margin-left: 1rem;
+}
+
+.item h6 {
+  color: black;
+  margin-left: 1rem;
+}
+
+.item h5{
+  color: #fcb900;
 }

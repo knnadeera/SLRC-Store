@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./AccountDetails.module.css";
 
 const AccountDetails = (props) => {
+  localStorage.setItem('userName',props.userName)
   return (
     <div className={classes.details}>
       <section>

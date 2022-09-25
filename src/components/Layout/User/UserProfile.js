@@ -7,8 +7,8 @@ import UserOrders from "./UserProfile/UserOrders";
 import AuthContext from "../../../Store/auth-context";
 
 const UserProfile = (props) => {
-  const [isShowOrders, setIsShowOrders] = useState(true);
-  const [showAccountDetails, setShowAccountDetails] = useState(false);
+  const [isShowOrders, setIsShowOrders] = useState(false);
+  const [showAccountDetails, setShowAccountDetails] = useState(true);
   const [changePassword, setChangePassword] = useState(false);
   const [accountDetails, setAccountDetails] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);

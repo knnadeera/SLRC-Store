@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useHttp from "../../hooks/use-http";
 import { getAllReviews } from "../../lib/api";
@@ -6,10 +6,13 @@ import { getAllReviews } from "../../lib/api";
 import classes from "./Reviews.module.css";
 import ReviewsList from "./ReviewsList";
 import NewReviewForm from "./NewReviewForm";
+import AuthContext from "../../Store/auth-context";
 
 const Reviews = () => {
   const [isAddingReview, setIsAddingReview] = useState(false);
   const params = useParams();
+
+  const authCtx = useContext(AuthContext);
 
   const { sendRequest, status, data: loadedReviews } = useHttp(getAllReviews);
 
@@ -36,9 +39,9 @@ const Reviews = () => {
 
   return (
     <section className={classes.reviews}>
-      <section >
+      <section>
         <h2>User Reviews</h2>
-        {!isAddingReview && (
+        {authCtx.isLoggedIn && !isAddingReview && (
           <button className="btn" onClick={startAddReviewHandler}>
             Add a Review
           </button>

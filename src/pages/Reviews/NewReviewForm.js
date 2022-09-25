@@ -22,10 +22,11 @@ const NewReviewForm = (props) => {
     event.preventDefault();
 
     const enteredText = reviewTextRef.current.value;
-
+    const userName= localStorage.getItem('userName')
+    const date = new Date().toLocaleDateString()
     // optional: Could validate here
 
-    sendRequest({ reviewData: { text: enteredText }, partId: props.partId});
+    sendRequest({ reviewData: { userName:userName, text: enteredText, date: date }, partId: props.partId});
   };
 
   return (

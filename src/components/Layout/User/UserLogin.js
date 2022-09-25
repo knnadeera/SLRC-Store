@@ -1,4 +1,4 @@
-import React, { useContext,  useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import AuthContext from "../../../Store/auth-context";
 import classes from "./UserLogin.module.css";
@@ -41,13 +41,15 @@ const UserLogin = (props) => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken, data.localId);
-        history.replace("/");
+        const expirationTime = new Date(
+          new Date().getTime() + +data.expiresIn * 1000
+        );
+        authCtx.login(data.idToken, data.localId, expirationTime.toISOString());
+        history.replace("/user");
       })
       .catch((err) => {
         alert(err.message);
-      });    
-      
+      });
   };
 
   return (

@@ -6,7 +6,12 @@ const ReviewsList = (props) => {
   return (
     <ul className={classes.reviews}>
       {props.reviews.map((review) => (
-        <ReviewItem key={review.id} text={review.text} />
+        <ReviewItem
+          key={review.id}
+          userName={review.userName}
+          date={review.date}
+          text={review.text}
+        />
       ))}
     </ul>
   );

@@ -41,5 +41,20 @@
 }
 
 .actions button {
-  font-size: 1.25rem;
-}
+    font: inherit;
+    cursor: pointer;
+    background-color: #fcb900;
+    border: none;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 15px;
+    font-weight: bold;
+    max-width: 7rem;
+  }
+  
+  .form button:hover,
+  .form button:active {
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+
